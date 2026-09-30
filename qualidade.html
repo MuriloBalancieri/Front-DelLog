@@ -1,3 +1,541 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Qualidade | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link active" href="qualidade.html" aria-current="page">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Qualidade</h1><p>Confira amostras e registre decisões antes da produção.</p></div><a class="button primary" href="#novo-registro">Registrar decisão</a></div><section class="metrics" aria-label="Resumo de qualidade"><article><span>Aguardando análise</span><strong>4</strong></article><article><span>Em conferência</span><strong>2</strong></article><article><span>Reprovados no mês</span><strong>1</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Pedidos em análise</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de qualidade"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Pedido <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Cliente</th><th scope="col">Peça</th><th scope="col">Recebido em</th><th scope="col">Responsável</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">PED-2026-1086</span></td><td><span>Indústria Vértice</span></td><td><span>Eixo usinado EU-19</span></td><td><span class="mono">25/09/2026</span></td><td><span>Rafael Lima</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro PED-2026-1086">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1080</span></td><td><span>Fundição Vale Verde</span></td><td><span>Conector angular CN-07</span></td><td><span class="mono">21/09/2026</span></td><td><span>Rafael Lima</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro PED-2026-1080">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1077</span></td><td><span>Metalúrgica Horizonte</span></td><td><span>Suporte SF-42</span></td><td><span class="mono">20/09/2026</span></td><td><span>Ana Ribeiro</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro PED-2026-1077">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1076</span></td><td><span>Mecânica Santa Rita</span></td><td><span>Bucha BA-08</span></td><td><span class="mono">19/09/2026</span></td><td><span>Ana Ribeiro</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro PED-2026-1076">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1075</span></td><td><span>Tecnopeças Sul</span></td><td><span>Flange FC-11</span></td><td><span class="mono">18/09/2026</span></td><td><span>Rafael Lima</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro PED-2026-1075">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1074</span></td><td><span>Oficina Atlas</span></td><td><span>Anel AE-16</span></td><td><span class="mono">17/09/2026</span></td><td><span>Ana Ribeiro</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro PED-2026-1074">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1073</span></td><td><span>Montadora Serra Azul</span></td><td><span>Chapa CA-25</span></td><td><span class="mono">16/09/2026</span></td><td><span>Rafael Lima</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro PED-2026-1073">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1072</span></td><td><span>Máquinas Itamar</span></td><td><span>Placa PB-30</span></td><td><span class="mono">15/09/2026</span></td><td><span>Ana Ribeiro</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro PED-2026-1072">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–8</span> de <span class="mono">8</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Registrar decisão</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Pedido<select><option>PED-2026-1086</option><option>PED-2026-1080</option></select></label><label>Resultado<select><option>Aprovar</option><option>Reprovar</option></select></label><label>Observação<input placeholder="Resultado da conferência"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Registrar decisão</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">PED-2026-1086</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1086</dd><dt>Cliente</dt><dd>Indústria Vértice</dd><dt>Peça</dt><dd>Eixo usinado EU-19</dd><dt>Recebido em</dt><dd>25/09/2026</dd><dt>Responsável</dt><dd>Rafael Lima</dd><dt>Status</dt><dd>Atenção</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">PED-2026-1080</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1080</dd><dt>Cliente</dt><dd>Fundição Vale Verde</dd><dt>Peça</dt><dd>Conector angular CN-07</dd><dt>Recebido em</dt><dd>21/09/2026</dd><dt>Responsável</dt><dd>Rafael Lima</dd><dt>Status</dt><dd>Atenção</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">PED-2026-1077</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1077</dd><dt>Cliente</dt><dd>Metalúrgica Horizonte</dd><dt>Peça</dt><dd>Suporte SF-42</dd><dt>Recebido em</dt><dd>20/09/2026</dd><dt>Responsável</dt><dd>Ana Ribeiro</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">PED-2026-1076</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1076</dd><dt>Cliente</dt><dd>Mecânica Santa Rita</dd><dt>Peça</dt><dd>Bucha BA-08</dd><dt>Recebido em</dt><dd>19/09/2026</dd><dt>Responsável</dt><dd>Ana Ribeiro</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">PED-2026-1075</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1075</dd><dt>Cliente</dt><dd>Tecnopeças Sul</dd><dt>Peça</dt><dd>Flange FC-11</dd><dt>Recebido em</dt><dd>18/09/2026</dd><dt>Responsável</dt><dd>Rafael Lima</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">PED-2026-1074</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1074</dd><dt>Cliente</dt><dd>Oficina Atlas</dd><dt>Peça</dt><dd>Anel AE-16</dd><dt>Recebido em</dt><dd>17/09/2026</dd><dt>Responsável</dt><dd>Ana Ribeiro</dd><dt>Status</dt><dd>Problema</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">PED-2026-1073</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1073</dd><dt>Cliente</dt><dd>Montadora Serra Azul</dd><dt>Peça</dt><dd>Chapa CA-25</dd><dt>Recebido em</dt><dd>16/09/2026</dd><dt>Responsável</dt><dd>Rafael Lima</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">PED-2026-1072</h2><p>Qualidade</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1072</dd><dt>Cliente</dt><dd>Máquinas Itamar</dd><dt>Peça</dt><dd>Placa PB-30</dd><dt>Recebido em</dt><dd>15/09/2026</dd><dt>Responsável</dt><dd>Ana Ribeiro</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Qualidade | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link active" href="qualidade.html" aria-current="page">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Qualidade</h1>
+              <p>Confira amostras e registre decisões antes da produção.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Registrar decisão</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de qualidade">
+            <article>
+              <span>Aguardando análise</span>
+              <strong>4</strong>
+            </article>
+            <article>
+              <span>Em conferência</span>
+              <strong>2</strong>
+            </article>
+            <article>
+              <span>Reprovados no mês</span>
+              <strong>1</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Pedidos em análise</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de qualidade">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Pedido
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Recebido em</th>
+                    <th scope="col">Responsável</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">PED-2026-1086</span></td>
+                    <td><span>Malharia Vértice</span></td>
+                    <td><span>Polo azul G POL-02</span></td>
+                    <td><span class="mono">25/09/2026</span></td>
+                    <td><span>Rafael Lima</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-1"
+                        aria-label="Abrir registro PED-2026-1086"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1080</span></td>
+                    <td><span>Moda Vale Verde</span></td>
+                    <td><span>Moletom cinza G MOL-08</span></td>
+                    <td><span class="mono">21/09/2026</span></td>
+                    <td><span>Rafael Lima</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-2"
+                        aria-label="Abrir registro PED-2026-1080"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1077</span></td>
+                    <td><span>Uniformes Horizonte</span></td>
+                    <td><span>Camiseta branca M CAM-01</span></td>
+                    <td><span class="mono">20/09/2026</span></td>
+                    <td><span>Ana Ribeiro</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-3"
+                        aria-label="Abrir registro PED-2026-1077"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1076</span></td>
+                    <td><span>Escola Santa Rita</span></td>
+                    <td><span>Ecobag natural ECO-03</span></td>
+                    <td><span class="mono">19/09/2026</span></td>
+                    <td><span>Ana Ribeiro</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-4"
+                        aria-label="Abrir registro PED-2026-1076"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1075</span></td>
+                    <td><span>Confecções Sul</span></td>
+                    <td><span>Camiseta preta G CAM-04</span></td>
+                    <td><span class="mono">18/09/2026</span></td>
+                    <td><span>Rafael Lima</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-5"
+                        aria-label="Abrir registro PED-2026-1075"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1074</span></td>
+                    <td><span>Studio Atlas</span></td>
+                    <td><span>Boné azul BON-06</span></td>
+                    <td><span class="mono">17/09/2026</span></td>
+                    <td><span>Ana Ribeiro</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-6"
+                        aria-label="Abrir registro PED-2026-1074"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1073</span></td>
+                    <td><span>Academia Serra Azul</span></td>
+                    <td><span>Camiseta esportiva M ESP-07</span></td>
+                    <td><span class="mono">16/09/2026</span></td>
+                    <td><span>Rafael Lima</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-7"
+                        aria-label="Abrir registro PED-2026-1073"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1072</span></td>
+                    <td><span>Colégio Itamar</span></td>
+                    <td><span>Camiseta infantil 10 INF-10</span></td>
+                    <td><span class="mono">15/09/2026</span></td>
+                    <td><span>Ana Ribeiro</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-8"
+                        aria-label="Abrir registro PED-2026-1072"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–8</span>
+                de
+                <span class="mono">8</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Registrar decisão</h2>
+          <p>Confira cor, alinhamento e acabamento com a arte aprovada.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Pedido
+          <select>
+            <option>PED-2026-1086</option>
+            <option>PED-2026-1080</option>
+          </select>
+        </label>
+        <label>
+          Resultado
+          <select>
+            <option>Aprovar</option>
+            <option>Reprovar</option>
+          </select>
+        </label>
+        <label>
+          Observação
+          <input placeholder="Resultado da conferência" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Registrar decisão</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">PED-2026-1086</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1086</dd>
+          <dt>Cliente</dt>
+          <dd>Malharia Vértice</dd>
+          <dt>Produto</dt>
+          <dd>Polo azul G POL-02</dd>
+          <dt>Recebido em</dt>
+          <dd>25/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+          <dt>Status</dt>
+          <dd>Atenção</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">PED-2026-1080</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1080</dd>
+          <dt>Cliente</dt>
+          <dd>Moda Vale Verde</dd>
+          <dt>Produto</dt>
+          <dd>Moletom cinza G MOL-08</dd>
+          <dt>Recebido em</dt>
+          <dd>21/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+          <dt>Status</dt>
+          <dd>Atenção</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">PED-2026-1077</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1077</dd>
+          <dt>Cliente</dt>
+          <dd>Uniformes Horizonte</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta branca M CAM-01</dd>
+          <dt>Recebido em</dt>
+          <dd>20/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Ana Ribeiro</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">PED-2026-1076</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1076</dd>
+          <dt>Cliente</dt>
+          <dd>Escola Santa Rita</dd>
+          <dt>Produto</dt>
+          <dd>Ecobag natural ECO-03</dd>
+          <dt>Recebido em</dt>
+          <dd>19/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Ana Ribeiro</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">PED-2026-1075</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1075</dd>
+          <dt>Cliente</dt>
+          <dd>Confecções Sul</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta preta G CAM-04</dd>
+          <dt>Recebido em</dt>
+          <dd>18/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">PED-2026-1074</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1074</dd>
+          <dt>Cliente</dt>
+          <dd>Studio Atlas</dd>
+          <dt>Produto</dt>
+          <dd>Boné azul BON-06</dd>
+          <dt>Recebido em</dt>
+          <dd>17/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Ana Ribeiro</dd>
+          <dt>Status</dt>
+          <dd>Problema</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">PED-2026-1073</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1073</dd>
+          <dt>Cliente</dt>
+          <dd>Academia Serra Azul</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta esportiva M ESP-07</dd>
+          <dt>Recebido em</dt>
+          <dd>16/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">PED-2026-1072</h2>
+          <p>Qualidade</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1072</dd>
+          <dt>Cliente</dt>
+          <dd>Colégio Itamar</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta infantil 10 INF-10</dd>
+          <dt>Recebido em</dt>
+          <dd>15/09/2026</dd>
+          <dt>Responsável</dt>
+          <dd>Ana Ribeiro</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

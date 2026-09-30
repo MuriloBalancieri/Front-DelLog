@@ -1,3 +1,550 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Importação | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link active" href="importacao.html" aria-current="page">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Importação</h1><p>Confira linhas e erros antes de confirmar uma planilha.</p></div><a class="button primary" href="#novo-registro">Importar planilha</a></div><section class="metrics" aria-label="Resumo de importação"><article><span>Linhas recebidas</span><strong>10</strong></article><article><span>Válidas</span><strong>7</strong></article><article><span>Com erro</span><strong>2</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Prévia da importação</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de importação"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Linha <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Código</th><th scope="col">Descrição</th><th scope="col">Estoque mínimo</th><th scope="col">Conferência</th><th scope="col">Erro encontrado</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">2</span></td><td><span class="mono">PEC-011</span></td><td><span>Arruela de pressão M8</span></td><td><span class="mono">25</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro 2">Abrir</a></td></tr><tr><td><span class="mono">3</span></td><td><span class="mono">PEC-012</span></td><td><span>Porca sextavada M8</span></td><td><span class="mono">20</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro 3">Abrir</a></td></tr><tr><td><span class="mono">4</span></td><td><span>—</span></td><td><span>Conector de aço</span></td><td><span class="mono">10</span></td><td><span class="badge problem">Problema</span></td><td><span>Código obrigatório ausente</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro 4">Abrir</a></td></tr><tr><td><span class="mono">5</span></td><td><span class="mono">PEC-014</span></td><td><span>Parafuso inox M6</span></td><td><span class="mono">50</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro 5">Abrir</a></td></tr><tr><td><span class="mono">6</span></td><td><span class="mono">PEC-015</span></td><td><span>Bucha de bronze</span></td><td><span class="mono">15</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro 6">Abrir</a></td></tr><tr><td><span class="mono">7</span></td><td><span class="mono">PEC-016</span></td><td><span>Placa de retenção</span></td><td><span>-3</span></td><td><span class="badge problem">Problema</span></td><td><span>Estoque mínimo deve ser zero ou maior</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro 7">Abrir</a></td></tr><tr><td><span class="mono">8</span></td><td><span class="mono">PEC-017</span></td><td><span>Abraçadeira metálica</span></td><td><span class="mono">40</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro 8">Abrir</a></td></tr><tr><td><span class="mono">9</span></td><td><span class="mono">PEC-018</span></td><td><span>Perfil de alumínio</span></td><td><span class="mono">20</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro 9">Abrir</a></td></tr><tr><td><span class="mono">10</span></td><td><span class="mono">PEC-019</span></td><td><span>Pino guia</span></td><td><span class="mono">30</span></td><td><span class="badge done">Concluído</span></td><td><span>—</span></td><td><a class="row-action" href="#registro-9" aria-label="Abrir registro 10">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–9</span> de <span class="mono">9</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><section class="panel"><div class="panel-head"><h2>Conferência necessária</h2></div><div class="empty-state"><strong>Corrija as linhas 4 e 7 antes de confirmar</strong><p>Os erros específicos aparecem na última coluna da prévia.</p></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Importar planilha</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Cadastro<select><option>Peças</option><option>Clientes</option><option>Fornecedores</option><option>Colaboradores</option></select></label><label>Arquivo Excel ou CSV<input type="file" accept=".xlsx,.xls,.csv"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Importar planilha</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">2</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>2</dd><dt>Código</dt><dd>PEC-011</dd><dt>Descrição</dt><dd>Arruela de pressão M8</dd><dt>Estoque mínimo</dt><dd>25</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">3</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>3</dd><dt>Código</dt><dd>PEC-012</dd><dt>Descrição</dt><dd>Porca sextavada M8</dd><dt>Estoque mínimo</dt><dd>20</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">4</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>4</dd><dt>Código</dt><dd>—</dd><dt>Descrição</dt><dd>Conector de aço</dd><dt>Estoque mínimo</dt><dd>10</dd><dt>Conferência</dt><dd>Problema</dd><dt>Erro encontrado</dt><dd>Código obrigatório ausente</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">5</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>5</dd><dt>Código</dt><dd>PEC-014</dd><dt>Descrição</dt><dd>Parafuso inox M6</dd><dt>Estoque mínimo</dt><dd>50</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">6</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>6</dd><dt>Código</dt><dd>PEC-015</dd><dt>Descrição</dt><dd>Bucha de bronze</dd><dt>Estoque mínimo</dt><dd>15</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">7</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>7</dd><dt>Código</dt><dd>PEC-016</dd><dt>Descrição</dt><dd>Placa de retenção</dd><dt>Estoque mínimo</dt><dd>-3</dd><dt>Conferência</dt><dd>Problema</dd><dt>Erro encontrado</dt><dd>Estoque mínimo deve ser zero ou maior</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">8</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>8</dd><dt>Código</dt><dd>PEC-017</dd><dt>Descrição</dt><dd>Abraçadeira metálica</dd><dt>Estoque mínimo</dt><dd>40</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">9</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>9</dd><dt>Código</dt><dd>PEC-018</dd><dt>Descrição</dt><dd>Perfil de alumínio</dd><dt>Estoque mínimo</dt><dd>20</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside><aside class="drawer" id="registro-9" aria-labelledby="detalhe-9"><div class="drawer-header"><div><h2 id="detalhe-9">10</h2><p>Importação</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Linha</dt><dd>10</dd><dt>Código</dt><dd>PEC-019</dd><dt>Descrição</dt><dd>Pino guia</dd><dt>Estoque mínimo</dt><dd>30</dd><dt>Conferência</dt><dd>Concluído</dd><dt>Erro encontrado</dt><dd>—</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Importação | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link active" href="importacao.html" aria-current="page">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Importação</h1>
+              <p>Confira linhas e erros antes de confirmar uma planilha.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Importar planilha</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de importação">
+            <article>
+              <span>Linhas recebidas</span>
+              <strong>10</strong>
+            </article>
+            <article>
+              <span>Válidas</span>
+              <strong>7</strong>
+            </article>
+            <article>
+              <span>Com erro</span>
+              <strong>2</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Prévia da importação</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de importação">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Linha
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Estoque mínimo</th>
+                    <th scope="col">Conferência</th>
+                    <th scope="col">Erro encontrado</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">2</span></td>
+                    <td><span class="mono">PEC-011</span></td>
+                    <td><span>Camiseta branca G</span></td>
+                    <td><span class="mono">25</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-1" aria-label="Abrir registro 2">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">3</span></td>
+                    <td><span class="mono">PEC-012</span></td>
+                    <td><span>Camiseta preta M</span></td>
+                    <td><span class="mono">20</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-2" aria-label="Abrir registro 3">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">4</span></td>
+                    <td><span>—</span></td>
+                    <td><span>Ecobag de algodão cru</span></td>
+                    <td><span class="mono">10</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td><span>Código obrigatório ausente</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-3" aria-label="Abrir registro 4">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">5</span></td>
+                    <td><span class="mono">PEC-014</span></td>
+                    <td><span>Avental de algodão</span></td>
+                    <td><span class="mono">50</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-4" aria-label="Abrir registro 5">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">6</span></td>
+                    <td><span class="mono">PEC-015</span></td>
+                    <td><span>Boné de sarja preto</span></td>
+                    <td><span class="mono">15</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-5" aria-label="Abrir registro 6">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">7</span></td>
+                    <td><span class="mono">PEC-016</span></td>
+                    <td><span>Moletom branco M</span></td>
+                    <td><span>-3</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td><span>Estoque mínimo deve ser zero ou maior</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-6" aria-label="Abrir registro 7">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">8</span></td>
+                    <td><span class="mono">PEC-017</span></td>
+                    <td><span>Camiseta infantil 12</span></td>
+                    <td><span class="mono">40</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-7" aria-label="Abrir registro 8">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">9</span></td>
+                    <td><span class="mono">PEC-018</span></td>
+                    <td><span>Sacola de algodão cru</span></td>
+                    <td><span class="mono">20</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-8" aria-label="Abrir registro 9">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">10</span></td>
+                    <td><span class="mono">PEC-019</span></td>
+                    <td><span>Camiseta esportiva G</span></td>
+                    <td><span class="mono">30</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td><span>—</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-9" aria-label="Abrir registro 10">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–9</span>
+                de
+                <span class="mono">9</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><h2>Conferência necessária</h2></div>
+            <div class="empty-state">
+              <strong>Corrija as linhas 4 e 7 antes de confirmar</strong>
+              <p>Os erros específicos aparecem na última coluna da prévia.</p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Importar planilha</h2>
+          <p>Selecione o cadastro e a planilha para conferir as linhas.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Cadastro
+          <select>
+            <option>Produtos</option>
+            <option>Clientes</option>
+            <option>Fornecedores</option>
+            <option>Colaboradores</option>
+          </select>
+        </label>
+        <label>
+          Arquivo Excel ou CSV
+          <input type="file" accept=".xlsx,.xls,.csv" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Importar planilha</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">2</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>2</dd>
+          <dt>Código</dt>
+          <dd>PEC-011</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta branca G</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>25</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">3</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>3</dd>
+          <dt>Código</dt>
+          <dd>PEC-012</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta preta M</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>20</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">4</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>4</dd>
+          <dt>Código</dt>
+          <dd>—</dd>
+          <dt>Descrição</dt>
+          <dd>Ecobag de algodão cru</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>10</dd>
+          <dt>Conferência</dt>
+          <dd>Problema</dd>
+          <dt>Erro encontrado</dt>
+          <dd>Código obrigatório ausente</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">5</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>5</dd>
+          <dt>Código</dt>
+          <dd>PEC-014</dd>
+          <dt>Descrição</dt>
+          <dd>Avental de algodão</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>50</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">6</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>6</dd>
+          <dt>Código</dt>
+          <dd>PEC-015</dd>
+          <dt>Descrição</dt>
+          <dd>Boné de sarja preto</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>15</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">7</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>7</dd>
+          <dt>Código</dt>
+          <dd>PEC-016</dd>
+          <dt>Descrição</dt>
+          <dd>Moletom branco M</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>-3</dd>
+          <dt>Conferência</dt>
+          <dd>Problema</dd>
+          <dt>Erro encontrado</dt>
+          <dd>Estoque mínimo deve ser zero ou maior</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">8</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>8</dd>
+          <dt>Código</dt>
+          <dd>PEC-017</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta infantil 12</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>40</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">9</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>9</dd>
+          <dt>Código</dt>
+          <dd>PEC-018</dd>
+          <dt>Descrição</dt>
+          <dd>Sacola de algodão cru</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>20</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-9" aria-labelledby="detalhe-9">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-9">10</h2>
+          <p>Importação</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Linha</dt>
+          <dd>10</dd>
+          <dt>Código</dt>
+          <dd>PEC-019</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta esportiva G</dd>
+          <dt>Estoque mínimo</dt>
+          <dd>30</dd>
+          <dt>Conferência</dt>
+          <dd>Concluído</dd>
+          <dt>Erro encontrado</dt>
+          <dd>—</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

@@ -1,3 +1,507 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Financeiro | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link active" href="financeiro.html" aria-current="page">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Financeiro</h1><p>Acompanhe documentos, valores e vencimentos.</p></div><a class="button primary" href="#novo-registro">Novo documento</a></div><section class="metrics" aria-label="Resumo de financeiro"><article><span>Em aberto</span><strong>12</strong></article><article><span>Vencem esta semana</span><strong>3</strong></article><article><span>Pagos no mês</span><strong>21</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Documentos</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de financeiro"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Número <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Fornecedor</th><th scope="col">Valor</th><th scope="col">Vencimento</th><th scope="col">Empresa</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">NF-2045</span></td><td><span>Aços Camargo Ltda.</span></td><td><span class="mono">R$ 1.250,00</span></td><td><span class="mono">30/09/2026</span></td><td><span>Unidade Centro</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro NF-2045">Abrir</a></td></tr><tr><td><span class="mono">NF-2044</span></td><td><span>Rolamentos Pioneira</span></td><td><span class="mono">R$ 680,00</span></td><td><span class="mono">20/09/2026</span></td><td><span>Unidade Norte</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro NF-2044">Abrir</a></td></tr><tr><td><span class="mono">NF-2043</span></td><td><span>Metalparts Distribuidora</span></td><td><span class="mono">R$ 4.860,00</span></td><td><span class="mono">02/10/2026</span></td><td><span>Unidade Centro</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro NF-2043">Abrir</a></td></tr><tr><td><span class="mono">NF-2042</span></td><td><span>Tintas Bauru</span></td><td><span class="mono">R$ 940,00</span></td><td><span class="mono">28/09/2026</span></td><td><span>Unidade Sul</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro NF-2042">Abrir</a></td></tr><tr><td><span class="mono">NF-2041</span></td><td><span>Aços Camargo Ltda.</span></td><td><span class="mono">R$ 2.310,00</span></td><td><span class="mono">06/10/2026</span></td><td><span>Unidade Centro</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro NF-2041">Abrir</a></td></tr><tr><td><span class="mono">NF-2040</span></td><td><span>Ferragens União</span></td><td><span class="mono">R$ 580,00</span></td><td><span class="mono">25/09/2026</span></td><td><span>Unidade Norte</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro NF-2040">Abrir</a></td></tr><tr><td><span class="mono">NF-2039</span></td><td><span>Embalagens Nova Era</span></td><td><span class="mono">R$ 1.120,00</span></td><td><span class="mono">07/10/2026</span></td><td><span>Unidade Sul</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro NF-2039">Abrir</a></td></tr><tr><td><span class="mono">NF-2038</span></td><td><span>Transvale Logística</span></td><td><span class="mono">R$ 3.450,00</span></td><td><span class="mono">24/09/2026</span></td><td><span>Unidade Centro</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro NF-2038">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–8</span> de <span class="mono">8</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Novo documento</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Fornecedor<input placeholder="Nome do fornecedor"></label><label>Número<input placeholder="NF-2046"></label><label>Valor unitário<input placeholder="R$ 0,00"></label><label>Vencimento<input type="date"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Novo documento</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">NF-2045</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2045</dd><dt>Fornecedor</dt><dd>Aços Camargo Ltda.</dd><dt>Valor</dt><dd>R$ 1.250,00</dd><dt>Vencimento</dt><dd>30/09/2026</dd><dt>Empresa</dt><dd>Unidade Centro</dd><dt>Status</dt><dd>Atenção</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">NF-2044</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2044</dd><dt>Fornecedor</dt><dd>Rolamentos Pioneira</dd><dt>Valor</dt><dd>R$ 680,00</dd><dt>Vencimento</dt><dd>20/09/2026</dd><dt>Empresa</dt><dd>Unidade Norte</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">NF-2043</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2043</dd><dt>Fornecedor</dt><dd>Metalparts Distribuidora</dd><dt>Valor</dt><dd>R$ 4.860,00</dd><dt>Vencimento</dt><dd>02/10/2026</dd><dt>Empresa</dt><dd>Unidade Centro</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">NF-2042</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2042</dd><dt>Fornecedor</dt><dd>Tintas Bauru</dd><dt>Valor</dt><dd>R$ 940,00</dd><dt>Vencimento</dt><dd>28/09/2026</dd><dt>Empresa</dt><dd>Unidade Sul</dd><dt>Status</dt><dd>Problema</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">NF-2041</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2041</dd><dt>Fornecedor</dt><dd>Aços Camargo Ltda.</dd><dt>Valor</dt><dd>R$ 2.310,00</dd><dt>Vencimento</dt><dd>06/10/2026</dd><dt>Empresa</dt><dd>Unidade Centro</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">NF-2040</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2040</dd><dt>Fornecedor</dt><dd>Ferragens União</dd><dt>Valor</dt><dd>R$ 580,00</dd><dt>Vencimento</dt><dd>25/09/2026</dd><dt>Empresa</dt><dd>Unidade Norte</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">NF-2039</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2039</dd><dt>Fornecedor</dt><dd>Embalagens Nova Era</dd><dt>Valor</dt><dd>R$ 1.120,00</dd><dt>Vencimento</dt><dd>07/10/2026</dd><dt>Empresa</dt><dd>Unidade Sul</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">NF-2038</h2><p>Financeiro</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Número</dt><dd>NF-2038</dd><dt>Fornecedor</dt><dd>Transvale Logística</dd><dt>Valor</dt><dd>R$ 3.450,00</dd><dt>Vencimento</dt><dd>24/09/2026</dd><dt>Empresa</dt><dd>Unidade Centro</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Financeiro | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link active" href="financeiro.html" aria-current="page">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Financeiro</h1>
+              <p>Acompanhe documentos, valores e vencimentos.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Novo documento</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de financeiro">
+            <article>
+              <span>Em aberto</span>
+              <strong>12</strong>
+            </article>
+            <article>
+              <span>Vencem esta semana</span>
+              <strong>3</strong>
+            </article>
+            <article>
+              <span>Pagos no mês</span>
+              <strong>21</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Documentos</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de financeiro">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Número
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Fornecedor</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Vencimento</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">NF-2045</span></td>
+                    <td><span>Malhas Camargo Ltda.</span></td>
+                    <td><span class="mono">R$ 1.250,00</span></td>
+                    <td><span class="mono">30/09/2026</span></td>
+                    <td><span>Unidade Centro</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-1" aria-label="Abrir registro NF-2045">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2044</span></td>
+                    <td><span>Insumos Têxteis Pioneira</span></td>
+                    <td><span class="mono">R$ 680,00</span></td>
+                    <td><span class="mono">20/09/2026</span></td>
+                    <td><span>Unidade Norte</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-2" aria-label="Abrir registro NF-2044">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2043</span></td>
+                    <td><span>Têxtil Sul Distribuidora</span></td>
+                    <td><span class="mono">R$ 4.860,00</span></td>
+                    <td><span class="mono">02/10/2026</span></td>
+                    <td><span>Unidade Centro</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-3" aria-label="Abrir registro NF-2043">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2042</span></td>
+                    <td><span>Tintas Têxteis Bauru</span></td>
+                    <td><span class="mono">R$ 940,00</span></td>
+                    <td><span class="mono">28/09/2026</span></td>
+                    <td><span>Unidade Sul</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-4" aria-label="Abrir registro NF-2042">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2041</span></td>
+                    <td><span>Malhas Camargo Ltda.</span></td>
+                    <td><span class="mono">R$ 2.310,00</span></td>
+                    <td><span class="mono">06/10/2026</span></td>
+                    <td><span>Unidade Centro</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-5" aria-label="Abrir registro NF-2041">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2040</span></td>
+                    <td><span>Serigrafia União</span></td>
+                    <td><span class="mono">R$ 580,00</span></td>
+                    <td><span class="mono">25/09/2026</span></td>
+                    <td><span>Unidade Norte</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-6" aria-label="Abrir registro NF-2040">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2039</span></td>
+                    <td><span>Embalagens Nova Era</span></td>
+                    <td><span class="mono">R$ 1.120,00</span></td>
+                    <td><span class="mono">07/10/2026</span></td>
+                    <td><span>Unidade Sul</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-7" aria-label="Abrir registro NF-2039">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">NF-2038</span></td>
+                    <td><span>Transvale Logística</span></td>
+                    <td><span class="mono">R$ 3.450,00</span></td>
+                    <td><span class="mono">24/09/2026</span></td>
+                    <td><span>Unidade Centro</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-8" aria-label="Abrir registro NF-2038">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–8</span>
+                de
+                <span class="mono">8</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Novo documento</h2>
+          <p>Informe o fornecedor, o valor e o vencimento do documento.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Fornecedor
+          <input placeholder="Nome do fornecedor" />
+        </label>
+        <label>
+          Número
+          <input placeholder="NF-2046" />
+        </label>
+        <label>
+          Valor unitário
+          <input placeholder="R$ 0,00" />
+        </label>
+        <label>
+          Vencimento
+          <input type="date" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Novo documento</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">NF-2045</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2045</dd>
+          <dt>Fornecedor</dt>
+          <dd>Malhas Camargo Ltda.</dd>
+          <dt>Valor</dt>
+          <dd>R$ 1.250,00</dd>
+          <dt>Vencimento</dt>
+          <dd>30/09/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Centro</dd>
+          <dt>Status</dt>
+          <dd>Atenção</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">NF-2044</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2044</dd>
+          <dt>Fornecedor</dt>
+          <dd>Insumos Têxteis Pioneira</dd>
+          <dt>Valor</dt>
+          <dd>R$ 680,00</dd>
+          <dt>Vencimento</dt>
+          <dd>20/09/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Norte</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">NF-2043</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2043</dd>
+          <dt>Fornecedor</dt>
+          <dd>Têxtil Sul Distribuidora</dd>
+          <dt>Valor</dt>
+          <dd>R$ 4.860,00</dd>
+          <dt>Vencimento</dt>
+          <dd>02/10/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Centro</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">NF-2042</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2042</dd>
+          <dt>Fornecedor</dt>
+          <dd>Tintas Têxteis Bauru</dd>
+          <dt>Valor</dt>
+          <dd>R$ 940,00</dd>
+          <dt>Vencimento</dt>
+          <dd>28/09/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Sul</dd>
+          <dt>Status</dt>
+          <dd>Problema</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">NF-2041</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2041</dd>
+          <dt>Fornecedor</dt>
+          <dd>Malhas Camargo Ltda.</dd>
+          <dt>Valor</dt>
+          <dd>R$ 2.310,00</dd>
+          <dt>Vencimento</dt>
+          <dd>06/10/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Centro</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">NF-2040</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2040</dd>
+          <dt>Fornecedor</dt>
+          <dd>Serigrafia União</dd>
+          <dt>Valor</dt>
+          <dd>R$ 580,00</dd>
+          <dt>Vencimento</dt>
+          <dd>25/09/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Norte</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">NF-2039</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2039</dd>
+          <dt>Fornecedor</dt>
+          <dd>Embalagens Nova Era</dd>
+          <dt>Valor</dt>
+          <dd>R$ 1.120,00</dd>
+          <dt>Vencimento</dt>
+          <dd>07/10/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Sul</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">NF-2038</h2>
+          <p>Financeiro</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Número</dt>
+          <dd>NF-2038</dd>
+          <dt>Fornecedor</dt>
+          <dd>Transvale Logística</dd>
+          <dt>Valor</dt>
+          <dd>R$ 3.450,00</dd>
+          <dt>Vencimento</dt>
+          <dd>24/09/2026</dd>
+          <dt>Empresa</dt>
+          <dd>Unidade Centro</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

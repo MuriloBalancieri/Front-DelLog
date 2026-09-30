@@ -1,3 +1,542 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Expedição | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link active" href="expedicao.html" aria-current="page">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Expedição</h1><p>Prepare remessas e acompanhe confirmação de entrega.</p></div><a class="button primary" href="#novo-registro">Preparar envio</a></div><section class="metrics" aria-label="Resumo de expedição"><article><span>Aguardando envio</span><strong>5</strong></article><article><span>Em transporte</span><strong>3</strong></article><article><span>Entregues no mês</span><strong>18</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Remessas</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de expedição"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Pedido <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Cliente</th><th scope="col">Destino</th><th scope="col">Previsão</th><th scope="col">Transportadora</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">PED-2026-1085</span></td><td><span>Mecânica Santa Rita</span></td><td><span>Campinas, SP</span></td><td><span class="mono">04/10/2026</span></td><td><span>Rodomax</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro PED-2026-1085">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1084</span></td><td><span>Tecnopeças Sul</span></td><td><span>Curitiba, PR</span></td><td><span class="mono">28/09/2026</span></td><td><span>Viasul</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro PED-2026-1084">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1083</span></td><td><span>Ferrovia Componentes</span></td><td><span>Sorocaba, SP</span></td><td><span class="mono">27/09/2026</span></td><td><span>Transvale</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro PED-2026-1083">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1079</span></td><td><span>Equipamentos Nobre</span></td><td><span>Jundiaí, SP</span></td><td><span class="mono">25/09/2026</span></td><td><span>Rodomax</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro PED-2026-1079">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1076</span></td><td><span>Oficina Atlas</span></td><td><span>Santos, SP</span></td><td><span class="mono">02/10/2026</span></td><td><span>Rota Leste</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro PED-2026-1076">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1074</span></td><td><span>Fundição Vale Verde</span></td><td><span>Limeira, SP</span></td><td><span class="mono">03/10/2026</span></td><td><span>Transvale</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro PED-2026-1074">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1071</span></td><td><span>Indústria Vértice</span></td><td><span>Americana, SP</span></td><td><span class="mono">01/10/2026</span></td><td><span>Viasul</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro PED-2026-1071">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1069</span></td><td><span>Máquinas Itamar</span></td><td><span>Piracicaba, SP</span></td><td><span class="mono">05/10/2026</span></td><td><span>Rodomax</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro PED-2026-1069">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–8</span> de <span class="mono">8</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Preparar envio</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Pedido<select><option>PED-2026-1085</option><option>PED-2026-1074</option></select></label><label>Destino<input placeholder="Cidade e estado"></label><label>Transportadora<input placeholder="Nome da transportadora"></label><label>Data prevista<input type="date"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Preparar envio</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">PED-2026-1085</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1085</dd><dt>Cliente</dt><dd>Mecânica Santa Rita</dd><dt>Destino</dt><dd>Campinas, SP</dd><dt>Previsão</dt><dd>04/10/2026</dd><dt>Transportadora</dt><dd>Rodomax</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">PED-2026-1084</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1084</dd><dt>Cliente</dt><dd>Tecnopeças Sul</dd><dt>Destino</dt><dd>Curitiba, PR</dd><dt>Previsão</dt><dd>28/09/2026</dd><dt>Transportadora</dt><dd>Viasul</dd><dt>Status</dt><dd>Problema</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">PED-2026-1083</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1083</dd><dt>Cliente</dt><dd>Ferrovia Componentes</dd><dt>Destino</dt><dd>Sorocaba, SP</dd><dt>Previsão</dt><dd>27/09/2026</dd><dt>Transportadora</dt><dd>Transvale</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">PED-2026-1079</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1079</dd><dt>Cliente</dt><dd>Equipamentos Nobre</dd><dt>Destino</dt><dd>Jundiaí, SP</dd><dt>Previsão</dt><dd>25/09/2026</dd><dt>Transportadora</dt><dd>Rodomax</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">PED-2026-1076</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1076</dd><dt>Cliente</dt><dd>Oficina Atlas</dd><dt>Destino</dt><dd>Santos, SP</dd><dt>Previsão</dt><dd>02/10/2026</dd><dt>Transportadora</dt><dd>Rota Leste</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">PED-2026-1074</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1074</dd><dt>Cliente</dt><dd>Fundição Vale Verde</dd><dt>Destino</dt><dd>Limeira, SP</dd><dt>Previsão</dt><dd>03/10/2026</dd><dt>Transportadora</dt><dd>Transvale</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">PED-2026-1071</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1071</dd><dt>Cliente</dt><dd>Indústria Vértice</dd><dt>Destino</dt><dd>Americana, SP</dd><dt>Previsão</dt><dd>01/10/2026</dd><dt>Transportadora</dt><dd>Viasul</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">PED-2026-1069</h2><p>Expedição</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1069</dd><dt>Cliente</dt><dd>Máquinas Itamar</dd><dt>Destino</dt><dd>Piracicaba, SP</dd><dt>Previsão</dt><dd>05/10/2026</dd><dt>Transportadora</dt><dd>Rodomax</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Expedição | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link active" href="expedicao.html" aria-current="page">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Expedição</h1>
+              <p>Prepare remessas e acompanhe confirmação de entrega.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Preparar envio</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de expedição">
+            <article>
+              <span>Aguardando envio</span>
+              <strong>5</strong>
+            </article>
+            <article>
+              <span>Em transporte</span>
+              <strong>3</strong>
+            </article>
+            <article>
+              <span>Entregues no mês</span>
+              <strong>18</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Remessas</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de expedição">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Pedido
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Destino</th>
+                    <th scope="col">Previsão</th>
+                    <th scope="col">Transportadora</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">PED-2026-1085</span></td>
+                    <td><span>Escola Santa Rita</span></td>
+                    <td><span>Campinas, SP</span></td>
+                    <td><span class="mono">04/10/2026</span></td>
+                    <td><span>Rodomax</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-1"
+                        aria-label="Abrir registro PED-2026-1085"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1084</span></td>
+                    <td><span>Confecções Sul</span></td>
+                    <td><span>Curitiba, PR</span></td>
+                    <td><span class="mono">28/09/2026</span></td>
+                    <td><span>Viasul</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-2"
+                        aria-label="Abrir registro PED-2026-1084"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1083</span></td>
+                    <td><span>Eventos Via Norte</span></td>
+                    <td><span>Sorocaba, SP</span></td>
+                    <td><span class="mono">27/09/2026</span></td>
+                    <td><span>Transvale</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-3"
+                        aria-label="Abrir registro PED-2026-1083"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1079</span></td>
+                    <td><span>Brindes Nobre</span></td>
+                    <td><span>Jundiaí, SP</span></td>
+                    <td><span class="mono">25/09/2026</span></td>
+                    <td><span>Rodomax</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-4"
+                        aria-label="Abrir registro PED-2026-1079"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1076</span></td>
+                    <td><span>Studio Atlas</span></td>
+                    <td><span>Santos, SP</span></td>
+                    <td><span class="mono">02/10/2026</span></td>
+                    <td><span>Rota Leste</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-5"
+                        aria-label="Abrir registro PED-2026-1076"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1074</span></td>
+                    <td><span>Moda Vale Verde</span></td>
+                    <td><span>Limeira, SP</span></td>
+                    <td><span class="mono">03/10/2026</span></td>
+                    <td><span>Transvale</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-6"
+                        aria-label="Abrir registro PED-2026-1074"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1071</span></td>
+                    <td><span>Malharia Vértice</span></td>
+                    <td><span>Americana, SP</span></td>
+                    <td><span class="mono">01/10/2026</span></td>
+                    <td><span>Viasul</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-7"
+                        aria-label="Abrir registro PED-2026-1071"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1069</span></td>
+                    <td><span>Colégio Itamar</span></td>
+                    <td><span>Piracicaba, SP</span></td>
+                    <td><span class="mono">05/10/2026</span></td>
+                    <td><span>Rodomax</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-8"
+                        aria-label="Abrir registro PED-2026-1069"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–8</span>
+                de
+                <span class="mono">8</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Preparar envio</h2>
+          <p>Informe o destino, a transportadora e a previsão de entrega.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Pedido
+          <select>
+            <option>PED-2026-1085</option>
+            <option>PED-2026-1074</option>
+          </select>
+        </label>
+        <label>
+          Destino
+          <input placeholder="Cidade e estado" />
+        </label>
+        <label>
+          Transportadora
+          <input placeholder="Nome da transportadora" />
+        </label>
+        <label>
+          Data prevista
+          <input type="date" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Preparar envio</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">PED-2026-1085</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1085</dd>
+          <dt>Cliente</dt>
+          <dd>Escola Santa Rita</dd>
+          <dt>Destino</dt>
+          <dd>Campinas, SP</dd>
+          <dt>Previsão</dt>
+          <dd>04/10/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Rodomax</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">PED-2026-1084</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1084</dd>
+          <dt>Cliente</dt>
+          <dd>Confecções Sul</dd>
+          <dt>Destino</dt>
+          <dd>Curitiba, PR</dd>
+          <dt>Previsão</dt>
+          <dd>28/09/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Viasul</dd>
+          <dt>Status</dt>
+          <dd>Problema</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">PED-2026-1083</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1083</dd>
+          <dt>Cliente</dt>
+          <dd>Eventos Via Norte</dd>
+          <dt>Destino</dt>
+          <dd>Sorocaba, SP</dd>
+          <dt>Previsão</dt>
+          <dd>27/09/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Transvale</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">PED-2026-1079</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1079</dd>
+          <dt>Cliente</dt>
+          <dd>Brindes Nobre</dd>
+          <dt>Destino</dt>
+          <dd>Jundiaí, SP</dd>
+          <dt>Previsão</dt>
+          <dd>25/09/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Rodomax</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">PED-2026-1076</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1076</dd>
+          <dt>Cliente</dt>
+          <dd>Studio Atlas</dd>
+          <dt>Destino</dt>
+          <dd>Santos, SP</dd>
+          <dt>Previsão</dt>
+          <dd>02/10/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Rota Leste</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">PED-2026-1074</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1074</dd>
+          <dt>Cliente</dt>
+          <dd>Moda Vale Verde</dd>
+          <dt>Destino</dt>
+          <dd>Limeira, SP</dd>
+          <dt>Previsão</dt>
+          <dd>03/10/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Transvale</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">PED-2026-1071</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1071</dd>
+          <dt>Cliente</dt>
+          <dd>Malharia Vértice</dd>
+          <dt>Destino</dt>
+          <dd>Americana, SP</dd>
+          <dt>Previsão</dt>
+          <dd>01/10/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Viasul</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">PED-2026-1069</h2>
+          <p>Expedição</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1069</dd>
+          <dt>Cliente</dt>
+          <dd>Colégio Itamar</dd>
+          <dt>Destino</dt>
+          <dd>Piracicaba, SP</dd>
+          <dt>Previsão</dt>
+          <dd>05/10/2026</dd>
+          <dt>Transportadora</dt>
+          <dd>Rodomax</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

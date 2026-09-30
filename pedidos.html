@@ -1,123 +1,940 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Consulta de pedidos do protótipo acadêmico DelLog.">
-  <title>Pedidos | DelLog</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-<header class="topbar">
-  <a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a>
-  <label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label>
-  <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a>
-</header>
-<div class="layout">
-  <aside class="sidebar">
-    <nav aria-label="Áreas do DelLog">
-      <div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div>
-      <div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a>
-<a class="nav-link active" href="pedidos.html" aria-current="page">Pedidos</a>
-<a class="nav-link" href="qualidade.html">Qualidade</a>
-<a class="nav-link" href="producao.html">Produção</a>
-<a class="nav-link" href="expedicao.html">Expedição</a></div>
-      <div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a>
-<a class="nav-link" href="rh.html">Recursos Humanos</a></div>
-      <div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a>
-<a class="nav-link" href="usuarios.html">Usuários</a></div>
-    </nav>
-  </aside>
-  <main id="conteudo"><div class="content-wrap">
-    <div class="page-heading"><div><h1>Pedidos</h1><p>Acompanhe prazos e responsáveis de cada pedido.</p></div><a class="button primary" href="#novo-pedido">Novo pedido</a></div>
-    <section class="metrics" aria-label="Resumo de pedidos">
-      <article><span>Em aberto</span><strong>18</strong></article><article><span>Em andamento</span><strong>9</strong></article><article><span>Precisam de atenção</span><strong>4</strong></article><article><span>Concluídos no mês</span><strong>35</strong></article>
-    </section>
-    <section class="panel" aria-labelledby="tabela-titulo">
-      <div class="panel-head"><h2 id="tabela-titulo">Lista de pedidos</h2><p>Atualizado em <time class="mono" datetime="2026-09-29T16:40">29/09/2026 16:40</time></p></div>
-      <div class="table-toolbar" aria-label="Filtros de pedidos"><label>Buscar na lista<input type="search" placeholder="Código ou cliente"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><label>Etapa<select><option>Todas</option><option>Recebimento</option><option>Qualidade</option><option>Produção</option><option>Expedição</option><option>Entrega</option></select></label><label>Prazo<select><option>Todos os prazos</option><option>Hoje</option><option>Esta semana</option><option>Em atraso</option></select></label><p class="toolbar-note">Ordenado por pedido mais recente</p></div>
-      <div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Pedido <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Cliente</th><th scope="col">Peça</th><th scope="col">Qtd.</th><th scope="col">Previsão</th><th scope="col">Etapa</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody>
-<tr><td class="mono">PED-2026-1087</td><td>Metalúrgica Horizonte</td><td>Suporte de fixação SF-42</td><td class="mono numeric">240</td><td class="mono"><time datetime="2026-10-02">02/10/2026</time></td><td class="flow-text">Produção</td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#pedido-1" aria-label="Abrir PED-2026-1087">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1086</td><td>Indústria Vértice</td><td>Eixo usinado EU-19</td><td class="mono numeric">80</td><td class="mono"><time datetime="2026-09-30">30/09/2026</time></td><td class="flow-text">Qualidade</td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#pedido-2" aria-label="Abrir PED-2026-1086">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1085</td><td>Mecânica Santa Rita</td><td>Bucha de aço BA-08</td><td class="mono numeric">500</td><td class="mono"><time datetime="2026-10-04">04/10/2026</time></td><td class="flow-text">Expedição</td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#pedido-3" aria-label="Abrir PED-2026-1085">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1084</td><td>Tecnopeças Sul</td><td>Flange de conexão FC-11</td><td class="mono numeric">120</td><td class="mono"><time datetime="2026-09-28">28/09/2026</time></td><td class="flow-text">Expedição</td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#pedido-4" aria-label="Abrir PED-2026-1084">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1083</td><td>Ferrovia Componentes</td><td>Pino de travamento PT-03</td><td class="mono numeric">320</td><td class="mono"><time datetime="2026-09-27">27/09/2026</time></td><td class="flow-text">Entrega</td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#pedido-5" aria-label="Abrir PED-2026-1083">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1082</td><td>Oficina Atlas</td><td>Anel espaçador AE-16</td><td class="mono numeric">150</td><td class="mono"><time datetime="2026-10-06">06/10/2026</time></td><td class="flow-text">Produção</td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#pedido-6" aria-label="Abrir PED-2026-1082">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1081</td><td>Montadora Serra Azul</td><td>Chapa de apoio CA-25</td><td class="mono numeric">600</td><td class="mono"><time datetime="2026-10-07">07/10/2026</time></td><td class="flow-text">Recebimento</td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#pedido-7" aria-label="Abrir PED-2026-1081">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1080</td><td>Fundição Vale Verde</td><td>Conector angular CN-07</td><td class="mono numeric">90</td><td class="mono"><time datetime="2026-09-29">29/09/2026</time></td><td class="flow-text">Qualidade</td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#pedido-8" aria-label="Abrir PED-2026-1080">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1079</td><td>Equipamentos Nobre</td><td>Parafuso especial PE-14</td><td class="mono numeric">1.200</td><td class="mono"><time datetime="2026-09-25">25/09/2026</time></td><td class="flow-text">Entrega</td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#pedido-9" aria-label="Abrir PED-2026-1079">Abrir</a></td></tr>
-<tr><td class="mono">PED-2026-1078</td><td>Máquinas Itamar</td><td>Placa de base PB-30</td><td class="mono numeric">75</td><td class="mono"><time datetime="2026-10-03">03/10/2026</time></td><td class="flow-text">Produção</td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#pedido-10" aria-label="Abrir PED-2026-1078">Abrir</a></td></tr>
-      </tbody></table></div>
-      <div class="table-footer"><span>Exibindo <span class="mono">1–10</span> de <span class="mono">27</span> pedidos</span><nav class="pagination" aria-label="Paginação de pedidos"><span class="disabled" aria-label="Página anterior">‹</span><span class="current" aria-current="page">1</span><span>2</span><span>3</span><span aria-label="Próxima página">›</span></nav></div>
-    </section>
-    <section class="panel" aria-labelledby="sem-atribuicao"><div class="panel-head"><h2 id="sem-atribuicao">Sem responsável</h2><p>Fila de distribuição</p></div><div class="empty-state"><strong>Nenhum pedido sem responsável</strong><p>Os pedidos recebidos já foram encaminhados para uma pessoa da equipe.</p><a class="text-link" href="#tabela-titulo">Ver todos os pedidos</a></div></section>
-    <footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e cadastro não gravam informações.</footer>
-  </div></main>
-</div>
-<a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
-<aside class="drawer" id="novo-pedido" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Novo pedido</h2><p>Dados iniciais para acompanhar o fluxo.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Cliente<input type="text" placeholder="Nome da empresa"></label><label>Número do pedido<input class="mono" type="text" placeholder="PED-2026-1088"></label><label>Peça<select><option>Selecione a peça</option><option>SF-42 · Suporte de fixação</option><option>EU-19 · Eixo usinado</option><option>BA-08 · Bucha de aço</option></select></label><label>Quantidade<input type="number" min="1" placeholder="0"></label><label>Data prevista<input type="date"></label><p class="form-hint">Cadastro ilustrativo. Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Cadastrar pedido</button></div></form></aside>
-<aside class="drawer" id="pedido-1" aria-labelledby="pedido-titulo-1">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-1" class="mono">PED-2026-1087</h2><p>Metalúrgica Horizonte</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Suporte de fixação SF-42</dd><dt>Quantidade</dt><dd class="mono">240 un.</dd><dt>Previsão</dt><dd class="mono">02/10/2026</dd><dt>Etapa</dt><dd>Produção</dd><dt>Status</dt><dd><span class="badge progress">Em andamento</span></dd><dt>Responsável</dt><dd>Mariana Costa</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T14:32">29/09/2026 14:32</time><span class="event-title">Produção iniciada</span><span class="event-person">Responsável: Mariana Costa</span></li><li><time datetime="2026-09-28T10:15">28/09/2026 10:15</time><span class="event-title">Qualidade aprovada</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-26T08:40">26/09/2026 08:40</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-2" aria-labelledby="pedido-titulo-2">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-2" class="mono">PED-2026-1086</h2><p>Indústria Vértice</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Eixo usinado EU-19</dd><dt>Quantidade</dt><dd class="mono">80 un.</dd><dt>Previsão</dt><dd class="mono">30/09/2026</dd><dt>Etapa</dt><dd>Qualidade</dd><dt>Status</dt><dd><span class="badge attention">Atenção</span></dd><dt>Responsável</dt><dd>Rafael Lima</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T11:05">29/09/2026 11:05</time><span class="event-title">Inspeção: medida fora da tolerância</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-28T09:10">28/09/2026 09:10</time><span class="event-title">Análise da Qualidade iniciada</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-25T16:20">25/09/2026 16:20</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-3" aria-labelledby="pedido-titulo-3">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-3" class="mono">PED-2026-1085</h2><p>Mecânica Santa Rita</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Bucha de aço BA-08</dd><dt>Quantidade</dt><dd class="mono">500 un.</dd><dt>Previsão</dt><dd class="mono">04/10/2026</dd><dt>Etapa</dt><dd>Expedição</dd><dt>Status</dt><dd><span class="badge waiting">Aguardando</span></dd><dt>Responsável</dt><dd>Camila Souza</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T09:48">29/09/2026 09:48</time><span class="event-title">Separação para expedição pendente</span><span class="event-person">Responsável: Camila Souza</span></li><li><time datetime="2026-09-27T15:35">27/09/2026 15:35</time><span class="event-title">Produção concluída</span><span class="event-person">Responsável: Mariana Costa</span></li><li><time datetime="2026-09-24T10:18">24/09/2026 10:18</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-4" aria-labelledby="pedido-titulo-4">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-4" class="mono">PED-2026-1084</h2><p>Tecnopeças Sul</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Flange de conexão FC-11</dd><dt>Quantidade</dt><dd class="mono">120 un.</dd><dt>Previsão</dt><dd class="mono">28/09/2026</dd><dt>Etapa</dt><dd>Expedição</dd><dt>Status</dt><dd><span class="badge problem">Problema</span></dd><dt>Responsável</dt><dd>Bruno Almeida</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T08:25">29/09/2026 08:25</time><span class="event-title">Transporte indisponível para coleta</span><span class="event-person">Responsável: Bruno Almeida</span></li><li><time datetime="2026-09-26T14:00">26/09/2026 14:00</time><span class="event-title">Expedição preparada</span><span class="event-person">Responsável: Bruno Almeida</span></li><li><time datetime="2026-09-22T09:45">22/09/2026 09:45</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-5" aria-labelledby="pedido-titulo-5">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-5" class="mono">PED-2026-1083</h2><p>Ferrovia Componentes</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Pino de travamento PT-03</dd><dt>Quantidade</dt><dd class="mono">320 un.</dd><dt>Previsão</dt><dd class="mono">27/09/2026</dd><dt>Etapa</dt><dd>Entrega</dd><dt>Status</dt><dd><span class="badge done">Concluído</span></dd><dt>Responsável</dt><dd>Larissa Rocha</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-26T17:12">26/09/2026 17:12</time><span class="event-title">Entrega confirmada</span><span class="event-person">Responsável: Larissa Rocha</span></li><li><time datetime="2026-09-25T08:30">25/09/2026 08:30</time><span class="event-title">Pedido expedido</span><span class="event-person">Responsável: Camila Souza</span></li><li><time datetime="2026-09-19T11:04">19/09/2026 11:04</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-6" aria-labelledby="pedido-titulo-6">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-6" class="mono">PED-2026-1082</h2><p>Oficina Atlas</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Anel espaçador AE-16</dd><dt>Quantidade</dt><dd class="mono">150 un.</dd><dt>Previsão</dt><dd class="mono">06/10/2026</dd><dt>Etapa</dt><dd>Produção</dd><dt>Status</dt><dd><span class="badge progress">Em andamento</span></dd><dt>Responsável</dt><dd>Mariana Costa</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T13:20">29/09/2026 13:20</time><span class="event-title">Lote em produção</span><span class="event-person">Responsável: Mariana Costa</span></li><li><time datetime="2026-09-27T10:35">27/09/2026 10:35</time><span class="event-title">Qualidade aprovada</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-23T08:52">23/09/2026 08:52</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-7" aria-labelledby="pedido-titulo-7">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-7" class="mono">PED-2026-1081</h2><p>Montadora Serra Azul</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Chapa de apoio CA-25</dd><dt>Quantidade</dt><dd class="mono">600 un.</dd><dt>Previsão</dt><dd class="mono">07/10/2026</dd><dt>Etapa</dt><dd>Recebimento</dd><dt>Status</dt><dd><span class="badge waiting">Aguardando</span></dd><dt>Responsável</dt><dd>Diego Martins</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T15:02">29/09/2026 15:02</time><span class="event-title">Pedido aguardando análise</span><span class="event-person">Responsável: Diego Martins</span></li><li><time datetime="2026-09-29T14:15">29/09/2026 14:15</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-8" aria-labelledby="pedido-titulo-8">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-8" class="mono">PED-2026-1080</h2><p>Fundição Vale Verde</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Conector angular CN-07</dd><dt>Quantidade</dt><dd class="mono">90 un.</dd><dt>Previsão</dt><dd class="mono">29/09/2026</dd><dt>Etapa</dt><dd>Qualidade</dd><dt>Status</dt><dd><span class="badge attention">Atenção</span></dd><dt>Responsável</dt><dd>Rafael Lima</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T10:40">29/09/2026 10:40</time><span class="event-title">Documento técnico pendente</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-26T13:06">26/09/2026 13:06</time><span class="event-title">Análise da Qualidade iniciada</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-21T09:35">21/09/2026 09:35</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-9" aria-labelledby="pedido-titulo-9">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-9" class="mono">PED-2026-1079</h2><p>Equipamentos Nobre</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Parafuso especial PE-14</dd><dt>Quantidade</dt><dd class="mono">1.200 un.</dd><dt>Previsão</dt><dd class="mono">25/09/2026</dd><dt>Etapa</dt><dd>Entrega</dd><dt>Status</dt><dd><span class="badge done">Concluído</span></dd><dt>Responsável</dt><dd>Larissa Rocha</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-24T16:55">24/09/2026 16:55</time><span class="event-title">Entrega confirmada</span><span class="event-person">Responsável: Larissa Rocha</span></li><li><time datetime="2026-09-23T11:28">23/09/2026 11:28</time><span class="event-title">Pedido expedido</span><span class="event-person">Responsável: Camila Souza</span></li><li><time datetime="2026-09-16T08:20">16/09/2026 08:20</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-<aside class="drawer" id="pedido-10" aria-labelledby="pedido-titulo-10">
-  <div class="drawer-header"><div><h2 id="pedido-titulo-10" class="mono">PED-2026-1078</h2><p>Máquinas Itamar</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div>
-  <section class="drawer-section"><h3>Resumo</h3><dl class="detail-list"><dt>Peça</dt><dd>Placa de base PB-30</dd><dt>Quantidade</dt><dd class="mono">75 un.</dd><dt>Previsão</dt><dd class="mono">03/10/2026</dd><dt>Etapa</dt><dd>Produção</dd><dt>Status</dt><dd><span class="badge progress">Em andamento</span></dd><dt>Responsável</dt><dd>Mariana Costa</dd></dl></section>
-  <section class="drawer-section"><h3>Fluxo</h3><ol class="steps"><li>Pedido recebido</li><li>Análise da Qualidade</li><li>Produção</li><li>Expedição</li><li>Entrega</li></ol></section>
-  <section class="drawer-section"><h3>Histórico de eventos</h3><ol class="event-list"><li><time datetime="2026-09-29T08:42">29/09/2026 08:42</time><span class="event-title">Usinagem iniciada</span><span class="event-person">Responsável: Mariana Costa</span></li><li><time datetime="2026-09-26T14:18">26/09/2026 14:18</time><span class="event-title">Qualidade aprovada</span><span class="event-person">Responsável: Rafael Lima</span></li><li><time datetime="2026-09-20T10:27">20/09/2026 10:27</time><span class="event-title">Pedido recebido</span><span class="event-person">Responsável: Diego Martins</span></li></ol></section>
-</aside>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: acompanhamento de pedidos e encomendas da estamparia."
+    />
+    <title>Pedidos | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link active" href="pedidos.html" aria-current="page">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Pedidos</h1>
+              <p>Acompanhe prazos e responsáveis de cada pedido.</p>
+            </div>
+            <a class="button primary" href="#novo-pedido">Novo pedido</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de pedidos">
+            <article>
+              <span>Em aberto</span>
+              <strong>18</strong>
+            </article>
+            <article>
+              <span>Em andamento</span>
+              <strong>9</strong>
+            </article>
+            <article>
+              <span>Precisam de atenção</span>
+              <strong>4</strong>
+            </article>
+            <article>
+              <span>Concluídos no mês</span>
+              <strong>35</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="tabela-titulo">
+            <div class="panel-head">
+              <h2 id="tabela-titulo">Lista de pedidos</h2>
+              <p>
+                Atualizado em
+                <time class="mono" datetime="2026-09-29T16:40">29/09/2026 16:40</time>
+              </p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de pedidos">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou cliente" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <label>
+                Etapa
+                <select>
+                  <option>Todas</option>
+                  <option>Recebimento</option>
+                  <option>Qualidade</option>
+                  <option>Produção</option>
+                  <option>Expedição</option>
+                  <option>Entrega</option>
+                </select>
+              </label>
+              <label>
+                Prazo
+                <select>
+                  <option>Todos os prazos</option>
+                  <option>Hoje</option>
+                  <option>Esta semana</option>
+                  <option>Em atraso</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por pedido mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Pedido
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Qtd.</th>
+                    <th scope="col">Previsão</th>
+                    <th scope="col">Etapa</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">PED-2026-1087</td>
+                    <td>Uniformes Horizonte</td>
+                    <td>Camiseta branca M CAM-01</td>
+                    <td class="mono numeric">240</td>
+                    <td class="mono"><time datetime="2026-10-02">02/10/2026</time></td>
+                    <td class="flow-text">Produção</td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-1" aria-label="Abrir PED-2026-1087">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1086</td>
+                    <td>Malharia Vértice</td>
+                    <td>Polo azul G POL-02</td>
+                    <td class="mono numeric">80</td>
+                    <td class="mono"><time datetime="2026-09-30">30/09/2026</time></td>
+                    <td class="flow-text">Qualidade</td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-2" aria-label="Abrir PED-2026-1086">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1085</td>
+                    <td>Escola Santa Rita</td>
+                    <td>Ecobag natural ECO-03</td>
+                    <td class="mono numeric">500</td>
+                    <td class="mono"><time datetime="2026-10-04">04/10/2026</time></td>
+                    <td class="flow-text">Expedição</td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-3" aria-label="Abrir PED-2026-1085">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1084</td>
+                    <td>Confecções Sul</td>
+                    <td>Camiseta preta G CAM-04</td>
+                    <td class="mono numeric">120</td>
+                    <td class="mono"><time datetime="2026-09-28">28/09/2026</time></td>
+                    <td class="flow-text">Expedição</td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-4" aria-label="Abrir PED-2026-1084">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1083</td>
+                    <td>Eventos Via Norte</td>
+                    <td>Avental preto AVT-05</td>
+                    <td class="mono numeric">320</td>
+                    <td class="mono"><time datetime="2026-09-27">27/09/2026</time></td>
+                    <td class="flow-text">Entrega</td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-5" aria-label="Abrir PED-2026-1083">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1082</td>
+                    <td>Studio Atlas</td>
+                    <td>Boné azul BON-06</td>
+                    <td class="mono numeric">150</td>
+                    <td class="mono"><time datetime="2026-10-06">06/10/2026</time></td>
+                    <td class="flow-text">Produção</td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-6" aria-label="Abrir PED-2026-1082">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1081</td>
+                    <td>Academia Serra Azul</td>
+                    <td>Camiseta esportiva M ESP-07</td>
+                    <td class="mono numeric">600</td>
+                    <td class="mono"><time datetime="2026-10-07">07/10/2026</time></td>
+                    <td class="flow-text">Recebimento</td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-7" aria-label="Abrir PED-2026-1081">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1080</td>
+                    <td>Moda Vale Verde</td>
+                    <td>Moletom cinza G MOL-08</td>
+                    <td class="mono numeric">90</td>
+                    <td class="mono"><time datetime="2026-09-29">29/09/2026</time></td>
+                    <td class="flow-text">Qualidade</td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-8" aria-label="Abrir PED-2026-1080">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1079</td>
+                    <td>Brindes Nobre</td>
+                    <td>Sacola de algodão SAC-09</td>
+                    <td class="mono numeric">1.200</td>
+                    <td class="mono"><time datetime="2026-09-25">25/09/2026</time></td>
+                    <td class="flow-text">Entrega</td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-9" aria-label="Abrir PED-2026-1079">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PED-2026-1078</td>
+                    <td>Colégio Itamar</td>
+                    <td>Camiseta infantil 10 INF-10</td>
+                    <td class="mono numeric">75</td>
+                    <td class="mono"><time datetime="2026-10-03">03/10/2026</time></td>
+                    <td class="flow-text">Produção</td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a class="row-action" href="#pedido-10" aria-label="Abrir PED-2026-1078">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–10</span>
+                de
+                <span class="mono">27</span>
+                pedidos
+              </span>
+              <nav class="pagination" aria-label="Paginação de pedidos">
+                <span class="disabled" aria-label="Página anterior">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span aria-label="Próxima página">›</span>
+              </nav>
+            </div>
+          </section>
+          <section class="panel" aria-labelledby="sem-atribuicao">
+            <div class="panel-head">
+              <h2 id="sem-atribuicao">Sem responsável</h2>
+              <p>Fila de distribuição</p>
+            </div>
+            <div class="empty-state">
+              <strong>Nenhum pedido sem responsável</strong>
+              <p>Os pedidos recebidos já foram encaminhados para uma pessoa da equipe.</p>
+              <a class="text-link" href="#tabela-titulo">Ver todos os pedidos</a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-pedido" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Novo pedido</h2>
+          <p>Informe o cliente, o produto e o prazo da encomenda.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Cliente
+          <input type="text" placeholder="Nome da empresa" />
+        </label>
+        <label>
+          Número do pedido
+          <input class="mono" type="text" placeholder="PED-2026-1088" />
+        </label>
+        <label>
+          Produto
+          <select>
+            <option>Selecione o produto</option>
+            <option>CAM-01 · Camiseta branca M</option>
+            <option>POL-02 · Polo azul G</option>
+            <option>ECO-03 · Ecobag natural</option>
+          </select>
+        </label>
+        <label>
+          Quantidade
+          <input type="number" min="1" placeholder="0" />
+        </label>
+        <label>
+          Data prevista
+          <input type="date" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Cadastrar pedido</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="pedido-1" aria-labelledby="pedido-titulo-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-1" class="mono">PED-2026-1087</h2>
+          <p>Uniformes Horizonte</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Camiseta branca M CAM-01</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">240 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">02/10/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Produção</dd>
+          <dt>Status</dt>
+          <dd><span class="badge progress">Em andamento</span></dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T14:32">29/09/2026 14:32</time>
+            <span class="event-title">Produção iniciada</span>
+            <span class="event-person">Responsável: Mariana Costa</span>
+          </li>
+          <li>
+            <time datetime="2026-09-28T10:15">28/09/2026 10:15</time>
+            <span class="event-title">Qualidade aprovada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-26T08:40">26/09/2026 08:40</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-2" aria-labelledby="pedido-titulo-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-2" class="mono">PED-2026-1086</h2>
+          <p>Malharia Vértice</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Polo azul G POL-02</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">80 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">30/09/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Qualidade</dd>
+          <dt>Status</dt>
+          <dd><span class="badge attention">Atenção</span></dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T11:05">29/09/2026 11:05</time>
+            <span class="event-title">Inspeção: cor divergente da arte aprovada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-28T09:10">28/09/2026 09:10</time>
+            <span class="event-title">Análise da Qualidade iniciada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-25T16:20">25/09/2026 16:20</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-3" aria-labelledby="pedido-titulo-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-3" class="mono">PED-2026-1085</h2>
+          <p>Escola Santa Rita</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Ecobag natural ECO-03</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">500 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">04/10/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Expedição</dd>
+          <dt>Status</dt>
+          <dd><span class="badge waiting">Aguardando</span></dd>
+          <dt>Responsável</dt>
+          <dd>Camila Souza</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T09:48">29/09/2026 09:48</time>
+            <span class="event-title">Separação para expedição pendente</span>
+            <span class="event-person">Responsável: Camila Souza</span>
+          </li>
+          <li>
+            <time datetime="2026-09-27T15:35">27/09/2026 15:35</time>
+            <span class="event-title">Produção concluída</span>
+            <span class="event-person">Responsável: Mariana Costa</span>
+          </li>
+          <li>
+            <time datetime="2026-09-24T10:18">24/09/2026 10:18</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-4" aria-labelledby="pedido-titulo-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-4" class="mono">PED-2026-1084</h2>
+          <p>Confecções Sul</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Camiseta preta G CAM-04</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">120 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">28/09/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Expedição</dd>
+          <dt>Status</dt>
+          <dd><span class="badge problem">Problema</span></dd>
+          <dt>Responsável</dt>
+          <dd>Bruno Almeida</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T08:25">29/09/2026 08:25</time>
+            <span class="event-title">Transporte indisponível para coleta</span>
+            <span class="event-person">Responsável: Bruno Almeida</span>
+          </li>
+          <li>
+            <time datetime="2026-09-26T14:00">26/09/2026 14:00</time>
+            <span class="event-title">Expedição preparada</span>
+            <span class="event-person">Responsável: Bruno Almeida</span>
+          </li>
+          <li>
+            <time datetime="2026-09-22T09:45">22/09/2026 09:45</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-5" aria-labelledby="pedido-titulo-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-5" class="mono">PED-2026-1083</h2>
+          <p>Eventos Via Norte</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Avental preto AVT-05</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">320 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">27/09/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Entrega</dd>
+          <dt>Status</dt>
+          <dd><span class="badge done">Concluído</span></dd>
+          <dt>Responsável</dt>
+          <dd>Larissa Rocha</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-26T17:12">26/09/2026 17:12</time>
+            <span class="event-title">Entrega confirmada</span>
+            <span class="event-person">Responsável: Larissa Rocha</span>
+          </li>
+          <li>
+            <time datetime="2026-09-25T08:30">25/09/2026 08:30</time>
+            <span class="event-title">Pedido expedido</span>
+            <span class="event-person">Responsável: Camila Souza</span>
+          </li>
+          <li>
+            <time datetime="2026-09-19T11:04">19/09/2026 11:04</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-6" aria-labelledby="pedido-titulo-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-6" class="mono">PED-2026-1082</h2>
+          <p>Studio Atlas</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Boné azul BON-06</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">150 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">06/10/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Produção</dd>
+          <dt>Status</dt>
+          <dd><span class="badge progress">Em andamento</span></dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T13:20">29/09/2026 13:20</time>
+            <span class="event-title">Lote em produção</span>
+            <span class="event-person">Responsável: Mariana Costa</span>
+          </li>
+          <li>
+            <time datetime="2026-09-27T10:35">27/09/2026 10:35</time>
+            <span class="event-title">Qualidade aprovada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-23T08:52">23/09/2026 08:52</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-7" aria-labelledby="pedido-titulo-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-7" class="mono">PED-2026-1081</h2>
+          <p>Academia Serra Azul</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Camiseta esportiva M ESP-07</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">600 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">07/10/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Recebimento</dd>
+          <dt>Status</dt>
+          <dd><span class="badge waiting">Aguardando</span></dd>
+          <dt>Responsável</dt>
+          <dd>Diego Martins</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T15:02">29/09/2026 15:02</time>
+            <span class="event-title">Pedido aguardando análise</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+          <li>
+            <time datetime="2026-09-29T14:15">29/09/2026 14:15</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-8" aria-labelledby="pedido-titulo-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-8" class="mono">PED-2026-1080</h2>
+          <p>Moda Vale Verde</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Moletom cinza G MOL-08</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">90 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">29/09/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Qualidade</dd>
+          <dt>Status</dt>
+          <dd><span class="badge attention">Atenção</span></dd>
+          <dt>Responsável</dt>
+          <dd>Rafael Lima</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T10:40">29/09/2026 10:40</time>
+            <span class="event-title">Arte final aguardando aprovação</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-26T13:06">26/09/2026 13:06</time>
+            <span class="event-title">Análise da Qualidade iniciada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-21T09:35">21/09/2026 09:35</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-9" aria-labelledby="pedido-titulo-9">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-9" class="mono">PED-2026-1079</h2>
+          <p>Brindes Nobre</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Sacola de algodão SAC-09</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">1.200 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">25/09/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Entrega</dd>
+          <dt>Status</dt>
+          <dd><span class="badge done">Concluído</span></dd>
+          <dt>Responsável</dt>
+          <dd>Larissa Rocha</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-24T16:55">24/09/2026 16:55</time>
+            <span class="event-title">Entrega confirmada</span>
+            <span class="event-person">Responsável: Larissa Rocha</span>
+          </li>
+          <li>
+            <time datetime="2026-09-23T11:28">23/09/2026 11:28</time>
+            <span class="event-title">Pedido expedido</span>
+            <span class="event-person">Responsável: Camila Souza</span>
+          </li>
+          <li>
+            <time datetime="2026-09-16T08:20">16/09/2026 08:20</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+    <aside class="drawer" id="pedido-10" aria-labelledby="pedido-titulo-10">
+      <div class="drawer-header">
+        <div>
+          <h2 id="pedido-titulo-10" class="mono">PED-2026-1078</h2>
+          <p>Colégio Itamar</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Resumo</h3>
+        <dl class="detail-list">
+          <dt>Produto</dt>
+          <dd>Camiseta infantil 10 INF-10</dd>
+          <dt>Quantidade</dt>
+          <dd class="mono">75 un.</dd>
+          <dt>Previsão</dt>
+          <dd class="mono">03/10/2026</dd>
+          <dt>Etapa</dt>
+          <dd>Produção</dd>
+          <dt>Status</dt>
+          <dd><span class="badge progress">Em andamento</span></dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+        </dl>
+      </section>
+      <section class="drawer-section">
+        <h3>Fluxo</h3>
+        <ol class="steps">
+          <li>Pedido recebido</li>
+          <li>Análise da Qualidade</li>
+          <li>Produção</li>
+          <li>Expedição</li>
+          <li>Entrega</li>
+        </ol>
+      </section>
+      <section class="drawer-section">
+        <h3>Histórico de eventos</h3>
+        <ol class="event-list">
+          <li>
+            <time datetime="2026-09-29T08:42">29/09/2026 08:42</time>
+            <span class="event-title">Aplicação DTF iniciada</span>
+            <span class="event-person">Responsável: Mariana Costa</span>
+          </li>
+          <li>
+            <time datetime="2026-09-26T14:18">26/09/2026 14:18</time>
+            <span class="event-title">Qualidade aprovada</span>
+            <span class="event-person">Responsável: Rafael Lima</span>
+          </li>
+          <li>
+            <time datetime="2026-09-20T10:27">20/09/2026 10:27</time>
+            <span class="event-title">Pedido recebido</span>
+            <span class="event-person">Responsável: Diego Martins</span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+  </body>
 </html>
-
-

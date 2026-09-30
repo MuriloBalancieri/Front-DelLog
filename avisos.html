@@ -1,3 +1,470 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Avisos | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link active" href="avisos.html" aria-current="page">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Avisos</h1><p>Acompanhe o que precisa de atenção em cada área.</p></div><a class="button primary" href="#novo-registro">Novo aviso</a></div><section class="metrics" aria-label="Resumo de avisos"><article><span>Não lidos</span><strong>3</strong></article><article><span>Alta prioridade</span><strong>2</strong></article><article><span>Resolvidos hoje</span><strong>6</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Avisos do sistema</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de avisos"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Área<select><option>Todos</option><option>Estoque</option><option>Pedidos</option><option>Qualidade</option><option>Produção</option><option>Expedição</option><option>Financeiro</option><option>RH</option><option>Importação</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Área <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Item</th><th scope="col">Motivo</th><th scope="col">Prioridade</th><th scope="col">Abrir</th></tr></thead><tbody><tr><td><span>Estoque</span></td><td><span class="mono">PEC-006</span></td><td><span>Saldo 12; mínimo 30</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir PEC-006">Abrir</a></td></tr><tr><td><span>Qualidade</span></td><td><span class="mono">PED-2026-1086</span></td><td><span>Medida fora da tolerância</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir PED-2026-1086">Abrir</a></td></tr><tr><td><span>Expedição</span></td><td><span class="mono">PED-2026-1084</span></td><td><span>Transporte indisponível</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir PED-2026-1084">Abrir</a></td></tr><tr><td><span>Financeiro</span></td><td><span class="mono">NF-2045</span></td><td><span>Vencimento amanhã</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir NF-2045">Abrir</a></td></tr><tr><td><span>RH</span></td><td><span class="mono">COL-0139</span></td><td><span>Ponto sem saída registrada</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir COL-0139">Abrir</a></td></tr><tr><td><span>Produção</span></td><td><span class="mono">PED-2026-1071</span></td><td><span>Conferência final pendente</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir PED-2026-1071">Abrir</a></td></tr><tr><td><span>Importação</span></td><td><span class="mono">IMP-0926-12</span></td><td><span>Arquivo recebido para conferência</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir IMP-0926-12">Abrir</a></td></tr><tr><td><span>Estoque</span></td><td><span class="mono">PEC-003</span></td><td><span>Reposição programada</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir PEC-003">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–8</span> de <span class="mono">8</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Novo aviso</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Área<select><option>Estoque</option><option>Pedidos</option><option>Qualidade</option><option>Produção</option><option>Expedição</option></select></label><label>Item<input placeholder="Código do item"></label><label>Motivo<input placeholder="Motivo do aviso"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Novo aviso</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">Estoque</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Estoque</dd><dt>Item</dt><dd>PEC-006</dd><dt>Motivo</dt><dd>Saldo 12; mínimo 30</dd><dt>Prioridade</dt><dd>Problema</dd><dt>Criado em</dt><dd>29/09/2026 15:12</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">Qualidade</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Qualidade</dd><dt>Item</dt><dd>PED-2026-1086</dd><dt>Motivo</dt><dd>Medida fora da tolerância</dd><dt>Prioridade</dt><dd>Atenção</dd><dt>Criado em</dt><dd>29/09/2026 11:05</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">Expedição</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Expedição</dd><dt>Item</dt><dd>PED-2026-1084</dd><dt>Motivo</dt><dd>Transporte indisponível</dd><dt>Prioridade</dt><dd>Problema</dd><dt>Criado em</dt><dd>29/09/2026 08:25</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">Financeiro</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Financeiro</dd><dt>Item</dt><dd>NF-2045</dd><dt>Motivo</dt><dd>Vencimento amanhã</dd><dt>Prioridade</dt><dd>Atenção</dd><dt>Criado em</dt><dd>29/09/2026 08:10</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">RH</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>RH</dd><dt>Item</dt><dd>COL-0139</dd><dt>Motivo</dt><dd>Ponto sem saída registrada</dd><dt>Prioridade</dt><dd>Atenção</dd><dt>Criado em</dt><dd>28/09/2026 17:34</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">Produção</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Produção</dd><dt>Item</dt><dd>PED-2026-1071</dd><dt>Motivo</dt><dd>Conferência final pendente</dd><dt>Prioridade</dt><dd>Aguardando</dd><dt>Criado em</dt><dd>28/09/2026 15:40</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">Importação</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Importação</dd><dt>Item</dt><dd>IMP-0926-12</dd><dt>Motivo</dt><dd>Arquivo recebido para conferência</dd><dt>Prioridade</dt><dd>Em andamento</dd><dt>Criado em</dt><dd>27/09/2026 16:12</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">Estoque</h2><p>Avisos</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Área</dt><dd>Estoque</dd><dt>Item</dt><dd>PEC-003</dd><dt>Motivo</dt><dd>Reposição programada</dd><dt>Prioridade</dt><dd>Concluído</dd><dt>Criado em</dt><dd>27/09/2026 09:00</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Avisos | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link active" href="avisos.html" aria-current="page">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Avisos</h1>
+              <p>Acompanhe o que precisa de atenção em cada área.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Novo aviso</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de avisos">
+            <article>
+              <span>Não lidos</span>
+              <strong>3</strong>
+            </article>
+            <article>
+              <span>Alta prioridade</span>
+              <strong>2</strong>
+            </article>
+            <article>
+              <span>Resolvidos hoje</span>
+              <strong>6</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Avisos do sistema</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de avisos">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Área
+                <select>
+                  <option>Todos</option>
+                  <option>Estoque</option>
+                  <option>Pedidos</option>
+                  <option>Qualidade</option>
+                  <option>Produção</option>
+                  <option>Expedição</option>
+                  <option>Financeiro</option>
+                  <option>RH</option>
+                  <option>Importação</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Área
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Prioridade</th>
+                    <th scope="col">Abrir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span>Estoque</span></td>
+                    <td><span class="mono">PEC-006</span></td>
+                    <td><span>Saldo 12; mínimo 30</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-1" aria-label="Abrir PEC-006">Abrir</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Qualidade</span></td>
+                    <td><span class="mono">PED-2026-1086</span></td>
+                    <td><span>Cor divergente da arte aprovada</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-2" aria-label="Abrir PED-2026-1086">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Expedição</span></td>
+                    <td><span class="mono">PED-2026-1084</span></td>
+                    <td><span>Transporte indisponível</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-3" aria-label="Abrir PED-2026-1084">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Financeiro</span></td>
+                    <td><span class="mono">NF-2045</span></td>
+                    <td><span>Vencimento amanhã</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-4" aria-label="Abrir NF-2045">Abrir</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>RH</span></td>
+                    <td><span class="mono">COL-0139</span></td>
+                    <td><span>Ponto sem saída registrada</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-5" aria-label="Abrir COL-0139">Abrir</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Produção</span></td>
+                    <td><span class="mono">PED-2026-1071</span></td>
+                    <td><span>Conferência da estampa pendente</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-6" aria-label="Abrir PED-2026-1071">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Importação</span></td>
+                    <td><span class="mono">IMP-0926-12</span></td>
+                    <td><span>Arquivo recebido para conferência</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-7" aria-label="Abrir IMP-0926-12">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span>Estoque</span></td>
+                    <td><span class="mono">PEC-003</span></td>
+                    <td><span>Reposição programada</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-8" aria-label="Abrir PEC-003">Abrir</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–8</span>
+                de
+                <span class="mono">8</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Novo aviso</h2>
+          <p>Informe a área, o item e o motivo da pendência.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Área
+          <select>
+            <option>Estoque</option>
+            <option>Pedidos</option>
+            <option>Qualidade</option>
+            <option>Produção</option>
+            <option>Expedição</option>
+          </select>
+        </label>
+        <label>
+          Item
+          <input placeholder="Código do item" />
+        </label>
+        <label>
+          Motivo
+          <input placeholder="Motivo do aviso" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Novo aviso</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">Estoque</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Estoque</dd>
+          <dt>Item</dt>
+          <dd>PEC-006</dd>
+          <dt>Motivo</dt>
+          <dd>Saldo 12; mínimo 30</dd>
+          <dt>Prioridade</dt>
+          <dd>Problema</dd>
+          <dt>Criado em</dt>
+          <dd>29/09/2026 15:12</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">Qualidade</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Qualidade</dd>
+          <dt>Item</dt>
+          <dd>PED-2026-1086</dd>
+          <dt>Motivo</dt>
+          <dd>Cor divergente da arte aprovada</dd>
+          <dt>Prioridade</dt>
+          <dd>Atenção</dd>
+          <dt>Criado em</dt>
+          <dd>29/09/2026 11:05</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">Expedição</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Expedição</dd>
+          <dt>Item</dt>
+          <dd>PED-2026-1084</dd>
+          <dt>Motivo</dt>
+          <dd>Transporte indisponível</dd>
+          <dt>Prioridade</dt>
+          <dd>Problema</dd>
+          <dt>Criado em</dt>
+          <dd>29/09/2026 08:25</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">Financeiro</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Financeiro</dd>
+          <dt>Item</dt>
+          <dd>NF-2045</dd>
+          <dt>Motivo</dt>
+          <dd>Vencimento amanhã</dd>
+          <dt>Prioridade</dt>
+          <dd>Atenção</dd>
+          <dt>Criado em</dt>
+          <dd>29/09/2026 08:10</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">RH</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>RH</dd>
+          <dt>Item</dt>
+          <dd>COL-0139</dd>
+          <dt>Motivo</dt>
+          <dd>Ponto sem saída registrada</dd>
+          <dt>Prioridade</dt>
+          <dd>Atenção</dd>
+          <dt>Criado em</dt>
+          <dd>28/09/2026 17:34</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">Produção</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Produção</dd>
+          <dt>Item</dt>
+          <dd>PED-2026-1071</dd>
+          <dt>Motivo</dt>
+          <dd>Conferência da estampa pendente</dd>
+          <dt>Prioridade</dt>
+          <dd>Aguardando</dd>
+          <dt>Criado em</dt>
+          <dd>28/09/2026 15:40</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">Importação</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Importação</dd>
+          <dt>Item</dt>
+          <dd>IMP-0926-12</dd>
+          <dt>Motivo</dt>
+          <dd>Arquivo recebido para conferência</dd>
+          <dt>Prioridade</dt>
+          <dd>Em andamento</dd>
+          <dt>Criado em</dt>
+          <dd>27/09/2026 16:12</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">Estoque</h2>
+          <p>Avisos</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Área</dt>
+          <dd>Estoque</dd>
+          <dt>Item</dt>
+          <dd>PEC-003</dd>
+          <dt>Motivo</dt>
+          <dd>Reposição programada</dd>
+          <dt>Prioridade</dt>
+          <dd>Concluído</dd>
+          <dt>Criado em</dt>
+          <dd>27/09/2026 09:00</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

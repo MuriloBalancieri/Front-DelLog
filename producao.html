@@ -1,3 +1,542 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Produção | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link" href="index.html">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link active" href="producao.html" aria-current="page">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Produção</h1><p>Acompanhe etapas, quantidades e responsáveis.</p></div><a class="button primary" href="#novo-registro">Nova produção</a></div><section class="metrics" aria-label="Resumo de produção"><article><span>Em andamento</span><strong>4</strong></article><article><span>Aguardando</span><strong>2</strong></article><article><span>Concluídas hoje</span><strong>2</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Ordens de produção</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de produção"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Pedido <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Peça</th><th scope="col">Etapa</th><th scope="col">Quantidade</th><th scope="col">Responsável</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">PED-2026-1087</span></td><td><span>Suporte SF-42</span></td><td><span>Montagem</span></td><td><span class="mono">240</span></td><td><span>Mariana Costa</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro PED-2026-1087">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1082</span></td><td><span>Anel AE-16</span></td><td><span>Usinagem</span></td><td><span class="mono">150</span></td><td><span>Mariana Costa</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro PED-2026-1082">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1078</span></td><td><span>Placa PB-30</span></td><td><span>Corte</span></td><td><span class="mono">75</span></td><td><span>Paulo Nunes</span></td><td><span class="badge progress">Em andamento</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro PED-2026-1078">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1071</span></td><td><span>Flange FC-11</span></td><td><span>Conferência</span></td><td><span class="mono">120</span></td><td><span>Paulo Nunes</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro PED-2026-1071">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1070</span></td><td><span>Chapa CA-25</span></td><td><span>Preparação</span></td><td><span class="mono">600</span></td><td><span>Mariana Costa</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro PED-2026-1070">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1069</span></td><td><span>Bucha BA-08</span></td><td><span>Montagem</span></td><td><span class="mono">300</span></td><td><span>Paulo Nunes</span></td><td><span class="badge waiting">Aguardando</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro PED-2026-1069">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1068</span></td><td><span>Pino PT-03</span></td><td><span>Conferência final</span></td><td><span class="mono">320</span></td><td><span>Mariana Costa</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro PED-2026-1068">Abrir</a></td></tr><tr><td><span class="mono">PED-2026-1067</span></td><td><span>Eixo EU-19</span></td><td><span>Acabamento</span></td><td><span class="mono">80</span></td><td><span>Paulo Nunes</span></td><td><span class="badge done">Concluído</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro PED-2026-1067">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–8</span> de <span class="mono">8</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Nova produção</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Pedido aprovado<select><option>PED-2026-1087</option><option>PED-2026-1082</option></select></label><label>Etapa<input placeholder="Etapa da produção"></label><label>Quantidade<input type="number" min="1"></label><label>Responsável<input placeholder="Nome do responsável"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Nova produção</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">PED-2026-1087</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1087</dd><dt>Peça</dt><dd>Suporte SF-42</dd><dt>Etapa</dt><dd>Montagem</dd><dt>Quantidade</dt><dd>240</dd><dt>Responsável</dt><dd>Mariana Costa</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">PED-2026-1082</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1082</dd><dt>Peça</dt><dd>Anel AE-16</dd><dt>Etapa</dt><dd>Usinagem</dd><dt>Quantidade</dt><dd>150</dd><dt>Responsável</dt><dd>Mariana Costa</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">PED-2026-1078</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1078</dd><dt>Peça</dt><dd>Placa PB-30</dd><dt>Etapa</dt><dd>Corte</dd><dt>Quantidade</dt><dd>75</dd><dt>Responsável</dt><dd>Paulo Nunes</dd><dt>Status</dt><dd>Em andamento</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">PED-2026-1071</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1071</dd><dt>Peça</dt><dd>Flange FC-11</dd><dt>Etapa</dt><dd>Conferência</dd><dt>Quantidade</dt><dd>120</dd><dt>Responsável</dt><dd>Paulo Nunes</dd><dt>Status</dt><dd>Atenção</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">PED-2026-1070</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1070</dd><dt>Peça</dt><dd>Chapa CA-25</dd><dt>Etapa</dt><dd>Preparação</dd><dt>Quantidade</dt><dd>600</dd><dt>Responsável</dt><dd>Mariana Costa</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">PED-2026-1069</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1069</dd><dt>Peça</dt><dd>Bucha BA-08</dd><dt>Etapa</dt><dd>Montagem</dd><dt>Quantidade</dt><dd>300</dd><dt>Responsável</dt><dd>Paulo Nunes</dd><dt>Status</dt><dd>Aguardando</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">PED-2026-1068</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1068</dd><dt>Peça</dt><dd>Pino PT-03</dd><dt>Etapa</dt><dd>Conferência final</dd><dt>Quantidade</dt><dd>320</dd><dt>Responsável</dt><dd>Mariana Costa</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">PED-2026-1067</h2><p>Produção</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Pedido</dt><dd>PED-2026-1067</dd><dt>Peça</dt><dd>Eixo EU-19</dd><dt>Etapa</dt><dd>Acabamento</dd><dt>Quantidade</dt><dd>80</dd><dt>Responsável</dt><dd>Paulo Nunes</dd><dt>Status</dt><dd>Concluído</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Produção | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link" href="index.html">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link active" href="producao.html" aria-current="page">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Produção</h1>
+              <p>Acompanhe etapas, quantidades e responsáveis.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Nova produção</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de produção">
+            <article>
+              <span>Em andamento</span>
+              <strong>4</strong>
+            </article>
+            <article>
+              <span>Aguardando</span>
+              <strong>2</strong>
+            </article>
+            <article>
+              <span>Concluídas hoje</span>
+              <strong>2</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Ordens de produção</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de produção">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Pedido
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Etapa</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Responsável</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">PED-2026-1087</span></td>
+                    <td><span>Camiseta branca M CAM-01</span></td>
+                    <td><span>Silk screen</span></td>
+                    <td><span class="mono">240</span></td>
+                    <td><span>Mariana Costa</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-1"
+                        aria-label="Abrir registro PED-2026-1087"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1082</span></td>
+                    <td><span>Boné azul BON-06</span></td>
+                    <td><span>Bordado</span></td>
+                    <td><span class="mono">150</span></td>
+                    <td><span>Mariana Costa</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-2"
+                        aria-label="Abrir registro PED-2026-1082"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1078</span></td>
+                    <td><span>Camiseta infantil 10 INF-10</span></td>
+                    <td><span>Aplicação DTF</span></td>
+                    <td><span class="mono">75</span></td>
+                    <td><span>Paulo Nunes</span></td>
+                    <td><span class="badge progress">Em andamento</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-3"
+                        aria-label="Abrir registro PED-2026-1078"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1071</span></td>
+                    <td><span>Camiseta preta G CAM-04</span></td>
+                    <td><span>Conferência</span></td>
+                    <td><span class="mono">120</span></td>
+                    <td><span>Paulo Nunes</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-4"
+                        aria-label="Abrir registro PED-2026-1071"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1070</span></td>
+                    <td><span>Camiseta esportiva M ESP-07</span></td>
+                    <td><span>Separação das peças</span></td>
+                    <td><span class="mono">600</span></td>
+                    <td><span>Mariana Costa</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-5"
+                        aria-label="Abrir registro PED-2026-1070"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1069</span></td>
+                    <td><span>Ecobag natural ECO-03</span></td>
+                    <td><span>Silk screen</span></td>
+                    <td><span class="mono">300</span></td>
+                    <td><span>Paulo Nunes</span></td>
+                    <td><span class="badge waiting">Aguardando</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-6"
+                        aria-label="Abrir registro PED-2026-1069"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1068</span></td>
+                    <td><span>Avental preto AVT-05</span></td>
+                    <td><span>Conferência da estampa</span></td>
+                    <td><span class="mono">320</span></td>
+                    <td><span>Mariana Costa</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-7"
+                        aria-label="Abrir registro PED-2026-1068"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PED-2026-1067</span></td>
+                    <td><span>Polo azul G POL-02</span></td>
+                    <td><span>Cura da tinta</span></td>
+                    <td><span class="mono">80</span></td>
+                    <td><span>Paulo Nunes</span></td>
+                    <td><span class="badge done">Concluído</span></td>
+                    <td>
+                      <a
+                        class="row-action"
+                        href="#registro-8"
+                        aria-label="Abrir registro PED-2026-1067"
+                      >
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–8</span>
+                de
+                <span class="mono">8</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Nova produção</h2>
+          <p>Informe a técnica de estampa, a quantidade e o responsável.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Pedido aprovado
+          <select>
+            <option>PED-2026-1087</option>
+            <option>PED-2026-1082</option>
+          </select>
+        </label>
+        <label>
+          Etapa
+          <input placeholder="Etapa da produção" />
+        </label>
+        <label>
+          Quantidade
+          <input type="number" min="1" />
+        </label>
+        <label>
+          Responsável
+          <input placeholder="Nome do responsável" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Nova produção</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">PED-2026-1087</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1087</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta branca M CAM-01</dd>
+          <dt>Etapa</dt>
+          <dd>Silk screen</dd>
+          <dt>Quantidade</dt>
+          <dd>240</dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">PED-2026-1082</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1082</dd>
+          <dt>Produto</dt>
+          <dd>Boné azul BON-06</dd>
+          <dt>Etapa</dt>
+          <dd>Bordado</dd>
+          <dt>Quantidade</dt>
+          <dd>150</dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">PED-2026-1078</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1078</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta infantil 10 INF-10</dd>
+          <dt>Etapa</dt>
+          <dd>Aplicação DTF</dd>
+          <dt>Quantidade</dt>
+          <dd>75</dd>
+          <dt>Responsável</dt>
+          <dd>Paulo Nunes</dd>
+          <dt>Status</dt>
+          <dd>Em andamento</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">PED-2026-1071</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1071</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta preta G CAM-04</dd>
+          <dt>Etapa</dt>
+          <dd>Conferência</dd>
+          <dt>Quantidade</dt>
+          <dd>120</dd>
+          <dt>Responsável</dt>
+          <dd>Paulo Nunes</dd>
+          <dt>Status</dt>
+          <dd>Atenção</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">PED-2026-1070</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1070</dd>
+          <dt>Produto</dt>
+          <dd>Camiseta esportiva M ESP-07</dd>
+          <dt>Etapa</dt>
+          <dd>Separação das peças</dd>
+          <dt>Quantidade</dt>
+          <dd>600</dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">PED-2026-1069</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1069</dd>
+          <dt>Produto</dt>
+          <dd>Ecobag natural ECO-03</dd>
+          <dt>Etapa</dt>
+          <dd>Silk screen</dd>
+          <dt>Quantidade</dt>
+          <dd>300</dd>
+          <dt>Responsável</dt>
+          <dd>Paulo Nunes</dd>
+          <dt>Status</dt>
+          <dd>Aguardando</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">PED-2026-1068</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1068</dd>
+          <dt>Produto</dt>
+          <dd>Avental preto AVT-05</dd>
+          <dt>Etapa</dt>
+          <dd>Conferência da estampa</dd>
+          <dt>Quantidade</dt>
+          <dd>320</dd>
+          <dt>Responsável</dt>
+          <dd>Mariana Costa</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">PED-2026-1067</h2>
+          <p>Produção</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Pedido</dt>
+          <dd>PED-2026-1067</dd>
+          <dt>Produto</dt>
+          <dd>Polo azul G POL-02</dd>
+          <dt>Etapa</dt>
+          <dd>Cura da tinta</dd>
+          <dt>Quantidade</dt>
+          <dd>80</dd>
+          <dt>Responsável</dt>
+          <dd>Paulo Nunes</dd>
+          <dt>Status</dt>
+          <dd>Concluído</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>

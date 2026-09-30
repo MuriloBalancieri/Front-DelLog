@@ -1,3 +1,585 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Interface demonstrativa do DelLog em HTML e CSS."><title>Estoque | DelLog</title><link rel="stylesheet" href="style.css"></head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo</a><header class="topbar"><a class="brand" href="index.html" aria-label="DelLog, início"><span class="brand-mark" aria-hidden="true">D</span>DelLog</a><label class="global-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input type="search" aria-label="Busca global" placeholder="Buscar pedido, peça ou cliente"></label><a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg><span>Avisos</span><span class="notification-count">3</span></a></header><div class="layout"><aside class="sidebar"><nav aria-label="Áreas do DelLog"><div class="nav-group"><p class="nav-caption">Avisos</p><a class="nav-link" href="avisos.html">Avisos</a></div><div class="nav-group"><p class="nav-caption">Operação</p><a class="nav-link active" href="index.html" aria-current="page">Estoque</a><a class="nav-link" href="pedidos.html">Pedidos</a><a class="nav-link" href="qualidade.html">Qualidade</a><a class="nav-link" href="producao.html">Produção</a><a class="nav-link" href="expedicao.html">Expedição</a></div><div class="nav-group"><p class="nav-caption">Administrativo</p><a class="nav-link" href="financeiro.html">Financeiro</a><a class="nav-link" href="rh.html">Recursos Humanos</a></div><div class="nav-group"><p class="nav-caption">Sistema</p><a class="nav-link" href="importacao.html">Importação</a><a class="nav-link" href="usuarios.html">Usuários</a></div></nav></aside><main id="conteudo"><div class="content-wrap"><div class="page-heading"><div><h1>Estoque</h1><p>Consulte saldos, localização e necessidade de reposição.</p></div><a class="button primary" href="#novo-registro">Cadastrar peça</a></div><section class="metrics" aria-label="Resumo de estoque"><article><span>Tipos de peça</span><strong>24</strong></article><article><span>Unidades disponíveis</span><strong>1.248</strong></article><article><span>Abaixo do mínimo</span><strong>3</strong></article></section><section class="panel" aria-labelledby="lista-titulo"><div class="panel-head"><h2 id="lista-titulo">Peças cadastradas</h2><p>Visão geral da área</p></div><div class="table-toolbar" aria-label="Filtros de estoque"><label>Buscar na lista<input type="search" placeholder="Código ou descrição"></label><label>Status<select><option>Todos</option><option>Aguardando</option><option>Em andamento</option><option>Atenção</option><option>Problema</option><option>Concluído</option></select></label><p class="toolbar-note">Ordenado por registro mais recente</p></div><div class="table-scroll"><table><thead><tr><th scope="col" aria-sort="descending">Código <span class="sort-mark" aria-hidden="true">↓</span></th><th scope="col">Descrição</th><th scope="col">Saldo</th><th scope="col">Mínimo</th><th scope="col">Localização</th><th scope="col">Status</th><th scope="col">Ações</th></tr></thead><tbody><tr><td><span class="mono">PEC-001</span></td><td><span>Suporte de fixação SF-42</span></td><td><span class="mono">240</span></td><td><span class="mono">40</span></td><td><span>A-01</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-1" aria-label="Abrir registro PEC-001">Abrir</a></td></tr><tr><td><span class="mono">PEC-002</span></td><td><span>Eixo usinado EU-19</span></td><td><span class="mono">80</span></td><td><span class="mono">20</span></td><td><span>A-02</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-2" aria-label="Abrir registro PEC-002">Abrir</a></td></tr><tr><td><span class="mono">PEC-003</span></td><td><span>Bucha de aço BA-08</span></td><td><span class="mono">18</span></td><td><span class="mono">30</span></td><td><span>B-04</span></td><td><span class="badge attention">Atenção</span></td><td><a class="row-action" href="#registro-3" aria-label="Abrir registro PEC-003">Abrir</a></td></tr><tr><td><span class="mono">PEC-004</span></td><td><span>Flange de conexão FC-11</span></td><td><span class="mono">120</span></td><td><span class="mono">25</span></td><td><span>B-05</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-4" aria-label="Abrir registro PEC-004">Abrir</a></td></tr><tr><td><span class="mono">PEC-005</span></td><td><span>Pino de travamento PT-03</span></td><td><span class="mono">320</span></td><td><span class="mono">60</span></td><td><span>C-01</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-5" aria-label="Abrir registro PEC-005">Abrir</a></td></tr><tr><td><span class="mono">PEC-006</span></td><td><span>Anel espaçador AE-16</span></td><td><span class="mono">12</span></td><td><span class="mono">30</span></td><td><span>C-03</span></td><td><span class="badge problem">Problema</span></td><td><a class="row-action" href="#registro-6" aria-label="Abrir registro PEC-006">Abrir</a></td></tr><tr><td><span class="mono">PEC-007</span></td><td><span>Chapa de apoio CA-25</span></td><td><span class="mono">600</span></td><td><span class="mono">100</span></td><td><span>D-02</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-7" aria-label="Abrir registro PEC-007">Abrir</a></td></tr><tr><td><span class="mono">PEC-008</span></td><td><span>Conector angular CN-07</span></td><td><span class="mono">90</span></td><td><span class="mono">25</span></td><td><span>D-04</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-8" aria-label="Abrir registro PEC-008">Abrir</a></td></tr><tr><td><span class="mono">PEC-009</span></td><td><span>Parafuso especial PE-14</span></td><td><span class="mono">1.200</span></td><td><span class="mono">300</span></td><td><span>E-01</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-9" aria-label="Abrir registro PEC-009">Abrir</a></td></tr><tr><td><span class="mono">PEC-010</span></td><td><span>Placa de base PB-30</span></td><td><span class="mono">75</span></td><td><span class="mono">20</span></td><td><span>E-03</span></td><td><span class="badge waiting">Disponível</span></td><td><a class="row-action" href="#registro-10" aria-label="Abrir registro PEC-010">Abrir</a></td></tr></tbody></table></div><div class="table-footer"><span>Exibindo <span class="mono">1–10</span> de <span class="mono">10</span> registros</span><nav class="pagination" aria-label="Paginação"><span class="disabled">‹</span><span class="current" aria-current="page">1</span><span class="disabled">›</span></nav></div></section><footer>DelLog · Protótipo acadêmico. Dados ilustrativos; buscas, filtros, paginação e formulários não gravam informações.</footer></div></main></div><a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a><aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo"><div class="drawer-header"><div><h2 id="novo-titulo">Cadastrar peça</h2><p>Dados ilustrativos para apresentação.</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a></div><form class="form"><label>Código<input placeholder="PEC-011"></label><label>Descrição<input placeholder="Descrição da peça"></label><label>Estoque mínimo<input type="number" min="0"></label><label>Localização<input placeholder="A-01"></label><p class="form-hint">Nenhum dado será salvo.</p><div class="form-actions"><a class="button" href="#conteudo">Cancelar</a><button class="button primary" type="button">Cadastrar peça</button></div></form></aside><aside class="drawer" id="registro-1" aria-labelledby="detalhe-1"><div class="drawer-header"><div><h2 id="detalhe-1">PEC-001</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-001</dd><dt>Descrição</dt><dd>Suporte de fixação SF-42</dd><dt>Saldo</dt><dd>240</dd><dt>Mínimo</dt><dd>40</dd><dt>Localização</dt><dd>A-01</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-2" aria-labelledby="detalhe-2"><div class="drawer-header"><div><h2 id="detalhe-2">PEC-002</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-002</dd><dt>Descrição</dt><dd>Eixo usinado EU-19</dd><dt>Saldo</dt><dd>80</dd><dt>Mínimo</dt><dd>20</dd><dt>Localização</dt><dd>A-02</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-3" aria-labelledby="detalhe-3"><div class="drawer-header"><div><h2 id="detalhe-3">PEC-003</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-003</dd><dt>Descrição</dt><dd>Bucha de aço BA-08</dd><dt>Saldo</dt><dd>18</dd><dt>Mínimo</dt><dd>30</dd><dt>Localização</dt><dd>B-04</dd><dt>Status</dt><dd>Atenção</dd></dl></section></aside><aside class="drawer" id="registro-4" aria-labelledby="detalhe-4"><div class="drawer-header"><div><h2 id="detalhe-4">PEC-004</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-004</dd><dt>Descrição</dt><dd>Flange de conexão FC-11</dd><dt>Saldo</dt><dd>120</dd><dt>Mínimo</dt><dd>25</dd><dt>Localização</dt><dd>B-05</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-5" aria-labelledby="detalhe-5"><div class="drawer-header"><div><h2 id="detalhe-5">PEC-005</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-005</dd><dt>Descrição</dt><dd>Pino de travamento PT-03</dd><dt>Saldo</dt><dd>320</dd><dt>Mínimo</dt><dd>60</dd><dt>Localização</dt><dd>C-01</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-6" aria-labelledby="detalhe-6"><div class="drawer-header"><div><h2 id="detalhe-6">PEC-006</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-006</dd><dt>Descrição</dt><dd>Anel espaçador AE-16</dd><dt>Saldo</dt><dd>12</dd><dt>Mínimo</dt><dd>30</dd><dt>Localização</dt><dd>C-03</dd><dt>Status</dt><dd>Problema</dd></dl></section></aside><aside class="drawer" id="registro-7" aria-labelledby="detalhe-7"><div class="drawer-header"><div><h2 id="detalhe-7">PEC-007</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-007</dd><dt>Descrição</dt><dd>Chapa de apoio CA-25</dd><dt>Saldo</dt><dd>600</dd><dt>Mínimo</dt><dd>100</dd><dt>Localização</dt><dd>D-02</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-8" aria-labelledby="detalhe-8"><div class="drawer-header"><div><h2 id="detalhe-8">PEC-008</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-008</dd><dt>Descrição</dt><dd>Conector angular CN-07</dd><dt>Saldo</dt><dd>90</dd><dt>Mínimo</dt><dd>25</dd><dt>Localização</dt><dd>D-04</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-9" aria-labelledby="detalhe-9"><div class="drawer-header"><div><h2 id="detalhe-9">PEC-009</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-009</dd><dt>Descrição</dt><dd>Parafuso especial PE-14</dd><dt>Saldo</dt><dd>1.200</dd><dt>Mínimo</dt><dd>300</dd><dt>Localização</dt><dd>E-01</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside><aside class="drawer" id="registro-10" aria-labelledby="detalhe-10"><div class="drawer-header"><div><h2 id="detalhe-10">PEC-010</h2><p>Estoque</p></div><a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a></div><section class="drawer-section"><h3>Dados do registro</h3><dl class="detail-list"><dt>Código</dt><dd>PEC-010</dd><dt>Descrição</dt><dd>Placa de base PB-30</dd><dt>Saldo</dt><dd>75</dd><dt>Mínimo</dt><dd>20</dd><dt>Localização</dt><dd>E-03</dd><dt>Status</dt><dd>Disponível</dd></dl></section></aside></body></html>
-
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="DelLog: gestão de pedidos, produção e estoque para estamparias."
+    />
+    <title>Estoque | DelLog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="DelLog, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        DelLog
+      </a>
+      <label class="global-search">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <circle cx="10.8" cy="10.8" r="6.8" />
+          <path d="m16 16 5 5" />
+        </svg>
+        <input
+          type="search"
+          aria-label="Busca global"
+          placeholder="Buscar pedido, produto ou cliente"
+        />
+      </label>
+      <a class="notification-link" href="avisos.html" aria-label="Avisos, 3 pendentes">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          aria-hidden="true"
+        >
+          <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+        </svg>
+        <span>Avisos</span>
+        <span class="notification-count">3</span>
+      </a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <nav aria-label="Áreas do DelLog">
+          <div class="nav-group">
+            <p class="nav-caption">Avisos</p>
+            <a class="nav-link" href="avisos.html">Avisos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Operação</p>
+            <a class="nav-link active" href="index.html" aria-current="page">Estoque</a>
+            <a class="nav-link" href="pedidos.html">Pedidos</a>
+            <a class="nav-link" href="qualidade.html">Qualidade</a>
+            <a class="nav-link" href="producao.html">Produção</a>
+            <a class="nav-link" href="expedicao.html">Expedição</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Administrativo</p>
+            <a class="nav-link" href="financeiro.html">Financeiro</a>
+            <a class="nav-link" href="rh.html">Recursos Humanos</a>
+          </div>
+          <div class="nav-group">
+            <p class="nav-caption">Sistema</p>
+            <a class="nav-link" href="importacao.html">Importação</a>
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </div>
+        </nav>
+      </aside>
+      <main id="conteudo">
+        <div class="content-wrap">
+          <div class="page-heading">
+            <div>
+              <h1>Estoque</h1>
+              <p>Consulte saldos, localização e necessidade de reposição.</p>
+            </div>
+            <a class="button primary" href="#novo-registro">Cadastrar produto</a>
+          </div>
+          <section class="metrics" aria-label="Resumo de estoque">
+            <article>
+              <span>Tipos de produto</span>
+              <strong>24</strong>
+            </article>
+            <article>
+              <span>Unidades disponíveis</span>
+              <strong>1.248</strong>
+            </article>
+            <article>
+              <span>Abaixo do mínimo</span>
+              <strong>3</strong>
+            </article>
+          </section>
+          <section class="panel" aria-labelledby="lista-titulo">
+            <div class="panel-head">
+              <h2 id="lista-titulo">Produtos cadastrados</h2>
+              <p>Visão geral da área</p>
+            </div>
+            <div class="table-toolbar" aria-label="Filtros de estoque">
+              <label>
+                Buscar na lista
+                <input type="search" placeholder="Código ou descrição" />
+              </label>
+              <label>
+                Status
+                <select>
+                  <option>Todos</option>
+                  <option>Aguardando</option>
+                  <option>Em andamento</option>
+                  <option>Atenção</option>
+                  <option>Problema</option>
+                  <option>Concluído</option>
+                </select>
+              </label>
+              <p class="toolbar-note">Ordenado por registro mais recente</p>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" aria-sort="descending">
+                      Código
+                      <span class="sort-mark" aria-hidden="true">↓</span>
+                    </th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Saldo</th>
+                    <th scope="col">Mínimo</th>
+                    <th scope="col">Localização</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="mono">PEC-001</span></td>
+                    <td><span>Camiseta branca M CAM-01</span></td>
+                    <td><span class="mono">240</span></td>
+                    <td><span class="mono">40</span></td>
+                    <td><span>A-01</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-1" aria-label="Abrir registro PEC-001">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-002</span></td>
+                    <td><span>Polo azul G POL-02</span></td>
+                    <td><span class="mono">80</span></td>
+                    <td><span class="mono">20</span></td>
+                    <td><span>A-02</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-2" aria-label="Abrir registro PEC-002">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-003</span></td>
+                    <td><span>Ecobag natural ECO-03</span></td>
+                    <td><span class="mono">18</span></td>
+                    <td><span class="mono">30</span></td>
+                    <td><span>B-04</span></td>
+                    <td><span class="badge attention">Atenção</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-3" aria-label="Abrir registro PEC-003">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-004</span></td>
+                    <td><span>Camiseta preta G CAM-04</span></td>
+                    <td><span class="mono">120</span></td>
+                    <td><span class="mono">25</span></td>
+                    <td><span>B-05</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-4" aria-label="Abrir registro PEC-004">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-005</span></td>
+                    <td><span>Avental preto AVT-05</span></td>
+                    <td><span class="mono">320</span></td>
+                    <td><span class="mono">60</span></td>
+                    <td><span>C-01</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-5" aria-label="Abrir registro PEC-005">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-006</span></td>
+                    <td><span>Boné azul BON-06</span></td>
+                    <td><span class="mono">12</span></td>
+                    <td><span class="mono">30</span></td>
+                    <td><span>C-03</span></td>
+                    <td><span class="badge problem">Problema</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-6" aria-label="Abrir registro PEC-006">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-007</span></td>
+                    <td><span>Camiseta esportiva M ESP-07</span></td>
+                    <td><span class="mono">600</span></td>
+                    <td><span class="mono">100</span></td>
+                    <td><span>D-02</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-7" aria-label="Abrir registro PEC-007">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-008</span></td>
+                    <td><span>Moletom cinza G MOL-08</span></td>
+                    <td><span class="mono">90</span></td>
+                    <td><span class="mono">25</span></td>
+                    <td><span>D-04</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-8" aria-label="Abrir registro PEC-008">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-009</span></td>
+                    <td><span>Sacola de algodão SAC-09</span></td>
+                    <td><span class="mono">1.200</span></td>
+                    <td><span class="mono">300</span></td>
+                    <td><span>E-01</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-9" aria-label="Abrir registro PEC-009">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="mono">PEC-010</span></td>
+                    <td><span>Camiseta infantil 10 INF-10</span></td>
+                    <td><span class="mono">75</span></td>
+                    <td><span class="mono">20</span></td>
+                    <td><span>E-03</span></td>
+                    <td><span class="badge waiting">Disponível</span></td>
+                    <td>
+                      <a class="row-action" href="#registro-10" aria-label="Abrir registro PEC-010">
+                        Abrir
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span>
+                Exibindo
+                <span class="mono">1–10</span>
+                de
+                <span class="mono">10</span>
+                registros
+              </span>
+              <nav class="pagination" aria-label="Paginação">
+                <span class="disabled">‹</span>
+                <span class="current" aria-current="page">1</span>
+                <span class="disabled">›</span>
+              </nav>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <a class="drawer-backdrop" href="#conteudo" aria-label="Fechar painel"></a>
+    <aside class="drawer" id="novo-registro" aria-labelledby="novo-titulo">
+      <div class="drawer-header">
+        <div>
+          <h2 id="novo-titulo">Cadastrar produto</h2>
+          <p>Informe o produto, o estoque mínimo e sua localização.</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar formulário">×</a>
+      </div>
+      <form class="form">
+        <label>
+          Código
+          <input placeholder="PEC-011" />
+        </label>
+        <label>
+          Descrição
+          <input placeholder="Descrição do produto" />
+        </label>
+        <label>
+          Estoque mínimo
+          <input type="number" min="0" />
+        </label>
+        <label>
+          Localização
+          <input placeholder="A-01" />
+        </label>
+        <div class="form-actions">
+          <a class="button" href="#conteudo">Cancelar</a>
+          <button class="button primary" type="button">Cadastrar produto</button>
+        </div>
+      </form>
+    </aside>
+    <aside class="drawer" id="registro-1" aria-labelledby="detalhe-1">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-1">PEC-001</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-001</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta branca M CAM-01</dd>
+          <dt>Saldo</dt>
+          <dd>240</dd>
+          <dt>Mínimo</dt>
+          <dd>40</dd>
+          <dt>Localização</dt>
+          <dd>A-01</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-2" aria-labelledby="detalhe-2">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-2">PEC-002</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-002</dd>
+          <dt>Descrição</dt>
+          <dd>Polo azul G POL-02</dd>
+          <dt>Saldo</dt>
+          <dd>80</dd>
+          <dt>Mínimo</dt>
+          <dd>20</dd>
+          <dt>Localização</dt>
+          <dd>A-02</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-3" aria-labelledby="detalhe-3">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-3">PEC-003</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-003</dd>
+          <dt>Descrição</dt>
+          <dd>Ecobag natural ECO-03</dd>
+          <dt>Saldo</dt>
+          <dd>18</dd>
+          <dt>Mínimo</dt>
+          <dd>30</dd>
+          <dt>Localização</dt>
+          <dd>B-04</dd>
+          <dt>Status</dt>
+          <dd>Atenção</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-4" aria-labelledby="detalhe-4">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-4">PEC-004</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-004</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta preta G CAM-04</dd>
+          <dt>Saldo</dt>
+          <dd>120</dd>
+          <dt>Mínimo</dt>
+          <dd>25</dd>
+          <dt>Localização</dt>
+          <dd>B-05</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-5" aria-labelledby="detalhe-5">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-5">PEC-005</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-005</dd>
+          <dt>Descrição</dt>
+          <dd>Avental preto AVT-05</dd>
+          <dt>Saldo</dt>
+          <dd>320</dd>
+          <dt>Mínimo</dt>
+          <dd>60</dd>
+          <dt>Localização</dt>
+          <dd>C-01</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-6" aria-labelledby="detalhe-6">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-6">PEC-006</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-006</dd>
+          <dt>Descrição</dt>
+          <dd>Boné azul BON-06</dd>
+          <dt>Saldo</dt>
+          <dd>12</dd>
+          <dt>Mínimo</dt>
+          <dd>30</dd>
+          <dt>Localização</dt>
+          <dd>C-03</dd>
+          <dt>Status</dt>
+          <dd>Problema</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-7" aria-labelledby="detalhe-7">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-7">PEC-007</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-007</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta esportiva M ESP-07</dd>
+          <dt>Saldo</dt>
+          <dd>600</dd>
+          <dt>Mínimo</dt>
+          <dd>100</dd>
+          <dt>Localização</dt>
+          <dd>D-02</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-8" aria-labelledby="detalhe-8">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-8">PEC-008</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-008</dd>
+          <dt>Descrição</dt>
+          <dd>Moletom cinza G MOL-08</dd>
+          <dt>Saldo</dt>
+          <dd>90</dd>
+          <dt>Mínimo</dt>
+          <dd>25</dd>
+          <dt>Localização</dt>
+          <dd>D-04</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-9" aria-labelledby="detalhe-9">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-9">PEC-009</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-009</dd>
+          <dt>Descrição</dt>
+          <dd>Sacola de algodão SAC-09</dd>
+          <dt>Saldo</dt>
+          <dd>1.200</dd>
+          <dt>Mínimo</dt>
+          <dd>300</dd>
+          <dt>Localização</dt>
+          <dd>E-01</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+    <aside class="drawer" id="registro-10" aria-labelledby="detalhe-10">
+      <div class="drawer-header">
+        <div>
+          <h2 id="detalhe-10">PEC-010</h2>
+          <p>Estoque</p>
+        </div>
+        <a class="drawer-close" href="#conteudo" aria-label="Fechar detalhe">×</a>
+      </div>
+      <section class="drawer-section">
+        <h3>Dados do registro</h3>
+        <dl class="detail-list">
+          <dt>Código</dt>
+          <dd>PEC-010</dd>
+          <dt>Descrição</dt>
+          <dd>Camiseta infantil 10 INF-10</dd>
+          <dt>Saldo</dt>
+          <dd>75</dd>
+          <dt>Mínimo</dt>
+          <dd>20</dd>
+          <dt>Localização</dt>
+          <dd>E-03</dd>
+          <dt>Status</dt>
+          <dd>Disponível</dd>
+        </dl>
+      </section>
+    </aside>
+  </body>
+</html>
